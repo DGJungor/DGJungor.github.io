@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="//blog.jungor.cn">
   <title>PHP注释标准 | 东莞俊哥的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#PHP中注释的规范与标准 12345678910111213141516171819202122232425262728/*** @name 名字* @abstract 申明变量/类/方法* @access 指明这个变量、类、函数/方法的存取权限* @author 函数作者的名字和邮箱地址* @category 组织packages* @copyright 指明版权信息* @const 指明常量">
+  <meta name="description" content="PHP中注释的规范与标准12345678910111213141516171819202122232425262728/*** @name 名字* @abstract 申明变量/类/方法* @access 指明这个变量、类、函数/方法的存取权限* @author 函数作者的名字和邮箱地址* @category 组织packages* @copyright 指明版权信息* @const 指明常量*">
 <meta name="keywords" content="代码规范">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHP注释标准">
 <meta property="og:url" content="//blog.jungor.cn/2017/12/28/PHP注释标准/index.html">
 <meta property="og:site_name" content="东莞俊哥的博客">
-<meta property="og:description" content="#PHP中注释的规范与标准 12345678910111213141516171819202122232425262728/*** @name 名字* @abstract 申明变量/类/方法* @access 指明这个变量、类、函数/方法的存取权限* @author 函数作者的名字和邮箱地址* @category 组织packages* @copyright 指明版权信息* @const 指明常量">
-<meta property="og:updated_time" content="2017-12-28T06:24:03.826Z">
+<meta property="og:description" content="PHP中注释的规范与标准12345678910111213141516171819202122232425262728/*** @name 名字* @abstract 申明变量/类/方法* @access 指明这个变量、类、函数/方法的存取权限* @author 函数作者的名字和邮箱地址* @category 组织packages* @copyright 指明版权信息* @const 指明常量*">
+<meta property="og:updated_time" content="2017-12-28T06:27:01.698Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP注释标准">
-<meta name="twitter:description" content="#PHP中注释的规范与标准 12345678910111213141516171819202122232425262728/*** @name 名字* @abstract 申明变量/类/方法* @access 指明这个变量、类、函数/方法的存取权限* @author 函数作者的名字和邮箱地址* @category 组织packages* @copyright 指明版权信息* @const 指明常量">
+<meta name="twitter:description" content="PHP中注释的规范与标准12345678910111213141516171819202122232425262728/*** @name 名字* @abstract 申明变量/类/方法* @access 指明这个变量、类、函数/方法的存取权限* @author 函数作者的名字和邮箱地址* @category 组织packages* @copyright 指明版权信息* @const 指明常量*">
   
     <link rel="alternative" href="/atom.xml" title="东莞俊哥的博客" type="application/atom+xml">
   
@@ -178,8 +178,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#PHP中注释的规范与标准</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">* @name 名字</span><br><span class="line">* @abstract 申明变量/类/方法</span><br><span class="line">* @access 指明这个变量、类、函数/方法的存取权限</span><br><span class="line">* @author 函数作者的名字和邮箱地址</span><br><span class="line">* @category 组织packages</span><br><span class="line">* @copyright 指明版权信息</span><br><span class="line">* @const 指明常量</span><br><span class="line">* @deprecate 指明不推荐或者是废弃的信息</span><br><span class="line">* @example 示例</span><br><span class="line">* @exclude 指明当前的注释将不进行分析，不出现在文挡中</span><br><span class="line">* @final 指明这是一个最终的类、方法、属性，禁止派生、修改。</span><br><span class="line">* @global 指明在此函数中引用的全局变量</span><br><span class="line">* @include 指明包含的文件的信息</span><br><span class="line">* @link 定义在线连接</span><br><span class="line">* @module 定义归属的模块信息</span><br><span class="line">* @modulegroup 定义归属的模块组</span><br><span class="line">* @package 定义归属的包的信息</span><br><span class="line">* @param 定义函数或者方法的参数信息</span><br><span class="line">* @return 定义函数或者方法的返回信息</span><br><span class="line">* @see 定义需要参考的函数、变量，并加入相应的超级连接。</span><br><span class="line">* @since 指明该api函数或者方法是从哪个版本开始引入的</span><br><span class="line">* @static 指明变量、类、函数是静态的。</span><br><span class="line">* @throws 指明此函数可能抛出的错误异常,极其发生的情况</span><br><span class="line">* @todo 指明应该改进或没有实现的地方</span><br><span class="line">* @var 定义说明变量/属性。</span><br><span class="line">* @version 定义版本信息</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+        <h1 id="PHP中注释的规范与标准"><a href="#PHP中注释的规范与标准" class="headerlink" title="PHP中注释的规范与标准"></a>PHP中注释的规范与标准</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">* @name 名字</span><br><span class="line">* @abstract 申明变量/类/方法</span><br><span class="line">* @access 指明这个变量、类、函数/方法的存取权限</span><br><span class="line">* @author 函数作者的名字和邮箱地址</span><br><span class="line">* @category 组织packages</span><br><span class="line">* @copyright 指明版权信息</span><br><span class="line">* @const 指明常量</span><br><span class="line">* @deprecate 指明不推荐或者是废弃的信息</span><br><span class="line">* @example 示例</span><br><span class="line">* @exclude 指明当前的注释将不进行分析，不出现在文挡中</span><br><span class="line">* @final 指明这是一个最终的类、方法、属性，禁止派生、修改。</span><br><span class="line">* @global 指明在此函数中引用的全局变量</span><br><span class="line">* @include 指明包含的文件的信息</span><br><span class="line">* @link 定义在线连接</span><br><span class="line">* @module 定义归属的模块信息</span><br><span class="line">* @modulegroup 定义归属的模块组</span><br><span class="line">* @package 定义归属的包的信息</span><br><span class="line">* @param 定义函数或者方法的参数信息</span><br><span class="line">* @return 定义函数或者方法的返回信息</span><br><span class="line">* @see 定义需要参考的函数、变量，并加入相应的超级连接。</span><br><span class="line">* @since 指明该api函数或者方法是从哪个版本开始引入的</span><br><span class="line">* @static 指明变量、类、函数是静态的。</span><br><span class="line">* @throws 指明此函数可能抛出的错误异常,极其发生的情况</span><br><span class="line">* @todo 指明应该改进或没有实现的地方</span><br><span class="line">* @var 定义说明变量/属性。</span><br><span class="line">* @version 定义版本信息</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
 <p>文档标记的使用范围是指该标记可以用来修饰的关键字，或其他文档标记。<br>所有的文档标记都是在每一行的 * 后面以@开头。如果在一段话的中间出来@的标记，这个标记将会被当做普通内容而被忽略掉。</p>
 <ol>
 <li><p>@access<br>使用范围：class,function,var,define,module<br>该标记用于指明关键字的存取权限：private、public或proteced</p>
@@ -464,15 +463,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">代码规范</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ThinkPHP5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">代码规范</a>
               </li>
             
             <div class="clearfix"></div>
