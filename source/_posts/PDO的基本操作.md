@@ -1,7 +1,7 @@
 ---
 title: PDO的基本操作
 date: 2017-12-29 14:40:53
-tags:
+tags: [PDO,数据库]
 ---
 PHP操作MySQL数据库方式有三种：
    *1. mysql 最原始的、纯过程化的 如连接： mysql_connect(主机名，账号，密码);
