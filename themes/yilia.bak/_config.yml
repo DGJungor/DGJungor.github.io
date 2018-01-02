@@ -47,10 +47,9 @@ reward_type: 2
 # 打赏wording
 reward_wording: '谢谢你请我吃糖果'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
-alipay: 
+alipay: http://p1i0r30rm.bkt.clouddn.com/%E6%94%AF%E4%BB%98%E5%AE%9D.PNG
 # 微信二维码图片地址
-weixin: 
-
+weixin: http://p1i0r30rm.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1.PNG
 # 目录
 # 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录
 toc: 1
@@ -123,8 +122,8 @@ friends:
   友情链接1: http://localhost:4000/
   友情链接2: http://localhost:4000/
   友情链接3: http://localhost:4000/
-  友情链接4: http://localhost:4000/
-  友情链接5: http://localhost:4000/
-  友情链接6: http://localhost:4000/
+#  友情链接4: http://localhost:4000/
+#  友情链接5: http://localhost:4000/
+#  友情链接6: http://localhost:4000/
 
 aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
