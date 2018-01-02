@@ -17,6 +17,8 @@ PHP操作MySQL数据库方式有三种：
       选择PDO的原因：跨数据库，带预处理（防sql注入）、支持事务操作
         
 
+<!-- more -->
+
 ## mysqli系列函数只能操作mysql/mariadb数据库、mysqli拓展不能操作其他数据库(oracel/sqlsever)。
 
 
@@ -33,6 +35,7 @@ PHP操作MySQL数据库方式有三种：
             extension=php_pdo_mysql.dll
             
    在PDO操作中涉及到类：PDO、PDOStatement(预处理对象)、PDOException（异常类）
+
 
 一、 PDO类的构造方法：
 ---------------------------------------------------------
