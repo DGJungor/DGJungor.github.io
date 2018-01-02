@@ -7,7 +7,7 @@ title: 东莞俊哥的博客
 subtitle: PHPer
 description:
 author: DGJungor
-language:
+language: zh-Hans
 timezone:
 
 # URL
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yilia
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -84,22 +84,22 @@ deploy:
 
 
 #yilia 主题特殊配置
-jsonContent:
-  meta: false
-  pages: false
-  posts:
-    title: true
-    date: true
-    path: true
-    text: false
-    raw: falseh
-    content: false
-    slug: false
-    updated: false
-    comments: false
-    link: false
-    permalink: false
-    excerpt: false
-    categories: false
-    tags: true
+#jsonContent:
+#  meta: false
+#  pages: false
+#  posts:
+#    title: true
+#    date: true
+#    path: true
+#    text: false
+#    raw: falseh
+#    content: false
+#    slug: false
+#    updated: false
+#    comments: false
+#    link: false
+#    permalink: false
+#    excerpt: false
+#    categories: false
+#    tags: true
 
