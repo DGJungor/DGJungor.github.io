@@ -66,8 +66,8 @@
       <file leaf-file-name="next.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/_data/next.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+            <state relative-caret-position="158">
+              <caret line="150" column="16" lean-forward="false" selection-start-line="150" selection-start-column="10" selection-end-line="150" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -100,6 +100,7 @@
       <find>ten</find>
       <find>rew</find>
       <find>menu</find>
+      <find>avatar</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,9 +134,9 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="602" />
-    <option name="y" value="90" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="957" />
+    <option name="y" value="65" />
     <option name="width" value="1936" />
     <option name="height" value="667" />
   </component>
@@ -168,6 +169,12 @@
               <item name="GitBlog" type="b2602c69:ProjectViewProjectNode" />
               <item name="GitBlog" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="source" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="GitBlog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitBlog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="source" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="images" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="GitBlog" type="b2602c69:ProjectViewProjectNode" />
@@ -234,15 +241,15 @@
       <workItem from="1515115623385" duration="646000" />
       <workItem from="1515377031668" duration="593000" />
       <workItem from="1515460540181" duration="593000" />
-      <workItem from="1515546595957" duration="7216000" />
+      <workItem from="1515546595957" duration="7929000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34631000" />
+    <option name="totallyTimeSpent" value="35344000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="957" y="65" width="1936" height="667" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1578125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -708,8 +715,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_data/next.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+        <state relative-caret-position="158">
+          <caret line="150" column="16" lean-forward="false" selection-start-line="150" selection-start-column="10" selection-end-line="150" selection-end-column="16" />
           <folding />
         </state>
       </provider>
