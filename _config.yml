@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 东莞俊哥的博客
+title: DGJungor's Blog
 subtitle: PHPer
 description:
 author: DGJungor
@@ -82,6 +82,14 @@ deploy:
   repo: https://github.com/DGJungor/DGJungor.github.io.git
   branch: master
 
+#==============================================================================================
+
+# Sitemap Setting
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+
 
 #yilia 主题特殊配置
 #jsonContent:
@@ -102,4 +110,7 @@ deploy:
 #    excerpt: false
 #    categories: false
 #    tags: true
+
+
+
 
