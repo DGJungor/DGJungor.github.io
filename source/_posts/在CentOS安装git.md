@@ -1,6 +1,7 @@
 ---
 title: 在CentOS安装git
 date: 2018-01-10 14:58:07
+categories: [Linux,CentOS]
 tags: [Linux,CentOS,git]
 ---
 

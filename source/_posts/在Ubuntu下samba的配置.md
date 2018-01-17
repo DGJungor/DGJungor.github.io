@@ -1,6 +1,7 @@
 ---
 title: 在Ubuntu下samba的配置
 date: 2018-01-10 14:40:48
+categories: [Linux,CentOS]
 tags: [Linux,Ubuntu,samba]
 ---
 

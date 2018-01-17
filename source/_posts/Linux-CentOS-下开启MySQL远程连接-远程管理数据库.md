@@ -2,6 +2,7 @@
 title: 'Linux/CentOS 下开启MySQL远程连接,远程管理数据库'
 date: 2018-01-04 13:53:17
 tags: [数据库,Linux,MySQL,CentOS]
+categories: 数据库
 ---
 
 > 当服务器没有运行PHP、没装phpMyAdmin的时候，远程管理MySQL就显得有必要了。
