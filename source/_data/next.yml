@@ -125,6 +125,7 @@ scheme: Gemini
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
   GitHub: https://github.com/dgjungor || github
+  SegmentFault: https://segmentfault.com/u/dgjungor || meh-o
   E-Mail: mailto:568171152@qq.com || envelope
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
