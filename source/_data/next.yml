@@ -123,6 +123,7 @@ scheme: Gemini
 # Key is the link label showing to end users.
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
+# http://fontawesome.io/icons/  图标库地址
 social:
   GitHub: https://github.com/dgjungor || github
   SegmentFault: https://segmentfault.com/u/dgjungor || meh-o
