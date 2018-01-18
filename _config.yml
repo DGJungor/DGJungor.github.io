@@ -90,6 +90,12 @@ sitemap:
 baidusitemap:
   path: baidusitemap.xml
 
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
 
 #yilia 主题特殊配置
 #jsonContent:
@@ -110,6 +116,14 @@ baidusitemap:
 #    excerpt: false
 #    categories: false
 #    tags: true
+
+
+
+# algolia 搜索服务
+#algolia:
+#  applicationID: '2DFEPNN95W'
+#  indexName: 'github'
+#  chunkSize: 5000
 
 
 
