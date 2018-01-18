@@ -65,12 +65,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="next.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="next.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_data/next.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="125" column="37" lean-forward="false" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="37" />
+            <state relative-caret-position="1046">
+              <caret line="129" column="64" lean-forward="false" selection-start-line="129" selection-start-column="64" selection-end-line="129" selection-end-column="64" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/about/index.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="23">
+                <caret line="1" column="9" lean-forward="false" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PHP注释标准.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/_posts/PHP注释标准.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -119,6 +145,7 @@
         <option value="$PROJECT_DIR$/source/_posts/Linux-CentOS-下开启MySQL远程连接-远程管理数据库.md" />
         <option value="$PROJECT_DIR$/source/_posts/PHP中private和public还有protected的区别.md" />
         <option value="$PROJECT_DIR$/source/_data/next.yml" />
+        <option value="$PROJECT_DIR$/source/about/index.md" />
       </list>
     </option>
   </component>
@@ -132,9 +159,9 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="368" />
-    <option name="y" value="623" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="799" />
+    <option name="y" value="97" />
     <option name="width" value="1676" />
     <option name="height" value="784" />
   </component>
@@ -255,15 +282,15 @@
       <workItem from="1516064616813" duration="3048000" />
       <workItem from="1516151302729" duration="3828000" />
       <workItem from="1516180810612" duration="716000" />
-      <workItem from="1516238020311" duration="2663000" />
+      <workItem from="1516238020311" duration="4295000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58172000" />
+    <option name="totallyTimeSpent" value="59804000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15364583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -297,7 +324,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/HZ$D.426.453/_config.yml" />
     <entry file="file://$PROJECT_DIR$/themes/yilia/_config.yml" />
     <entry file="file://$PROJECT_DIR$/source/CNAME">
       <provider selected="true" editor-type-id="text-editor">
@@ -663,17 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/PHP注释标准.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="161">
-            <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/什么是单例-为什么要使用单例.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -727,9 +742,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_data/next.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="125" column="37" lean-forward="false" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="37" />
+        <state relative-caret-position="1046">
+          <caret line="129" column="64" lean-forward="false" selection-start-line="129" selection-start-column="64" selection-end-line="129" selection-end-column="64" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/PHP注释标准.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/about/index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="23">
+            <caret line="1" column="9" lean-forward="false" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
