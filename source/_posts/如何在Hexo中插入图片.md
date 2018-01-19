@@ -6,7 +6,7 @@ categories: Hexo
 ---
 
 # 资源文件夹
-资源（Asset）代表 source 文件夹中除了文章以外的所有文件，例如图片、CSS、JS 文件等。比方说，如果你的Hexo项目中只有少量图片，那最简单的方法就是将它们放在 source/images 文件夹中。然后通过类似于 ![](/images/image.jpg) 的方法访问它们。
+资源（Asset）代表 source 文件夹中除了文章以外的所有文件，例如图片、CSS、JS 文件等。比方说，如果你的Hexo项目中只有少量图片，那最简单的方法就是将它们放在 source/images 文件夹中。然后通过类似于 `![](/images/image.jpg)` 的方法访问它们。
 
 <!-- more -->
 
@@ -29,11 +29,12 @@ post_asset_folder: true
 {% asset_link slug [title] %}
 ```
 
-比如说：当你打开文章资源文件夹功能后，你把一个 example.jpg 图片放在了你的资源文件夹中，如果通过使用相对路径的常规 markdown 语法 ![](/example.jpg) ，它将 不会 出现在首页上。（但是它会在文章中按你期待的方式工作）
+比如说：当你打开文章资源文件夹功能后，你把一个 example.jpg 图片放在了你的资源文件夹中，如果通过使用相对路径的常规 markdown 语法 `![](/example.jpg)` ，它将 不会 出现在首页上。（但是它会在文章中按你期待的方式工作）
 
 正确的引用图片方式是使用下列的标签插件而不是 markdown ：
-
+```markdowm
 {% asset_img example.jpg This is an example image %}
+```
 通过这种方式，图片将会同时出现在文章和主页以及归档页中。
 
 

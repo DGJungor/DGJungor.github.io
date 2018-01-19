@@ -56,8 +56,8 @@
         <entry file="file://$PROJECT_DIR$/source/_posts/如何在Hexo中插入图片.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="206">
-                <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+              <first_editor relative-caret-position="689">
+                <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -306,12 +306,12 @@
       <workItem from="1516180810612" duration="716000" />
       <workItem from="1516238020311" duration="11722000" />
       <workItem from="1516261612729" duration="747000" />
-      <workItem from="1516324291461" duration="1611000" />
+      <workItem from="1516324291461" duration="1890000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69589000" />
+    <option name="totallyTimeSpent" value="69868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -779,8 +779,8 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/如何在Hexo中插入图片.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="206">
-            <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <first_editor relative-caret-position="689">
+            <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
