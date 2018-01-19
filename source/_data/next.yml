@@ -329,7 +329,7 @@ font:
   # Fallback to `global` font settings.
   logo:
     external: true
-    family: Knewave 
+    family: Knewave
     size: 24
 
   # Font settings for <code> and code blocks.
@@ -399,7 +399,7 @@ valine:
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-#livere_uid: your uid
+livere_uid: MTAyMC8zMzM2NC85OTIw
 
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
