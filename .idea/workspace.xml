@@ -45,19 +45,19 @@
       <file leaf-file-name="_config.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
+            <state relative-caret-position="1058">
               <caret line="46" column="2" lean-forward="false" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="如何在Hexo中插入图片.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="如何在Hexo中插入图片.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/如何在Hexo中插入图片.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="689">
-                <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <first_editor relative-caret-position="920">
+                <caret line="40" column="3" lean-forward="false" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -69,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/source/_posts/PDO的基本操作.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="23">
+              <first_editor relative-caret-position="437">
                 <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="13" />
                 <folding />
               </first_editor>
@@ -101,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="next.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="next.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/_data/next.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="479" column="26" lean-forward="false" selection-start-line="479" selection-start-column="26" selection-end-line="479" selection-end-column="26" />
+            <state relative-caret-position="379">
+              <caret line="308" column="48" lean-forward="true" selection-start-line="308" selection-start-column="48" selection-end-line="308" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -163,10 +163,10 @@
         <option value="$PROJECT_DIR$/source/_posts/什么是单例-为什么要使用单例.md" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/source/google91f3c70ded225c3c.html" />
-        <option value="$PROJECT_DIR$/source/_data/next.yml" />
         <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/source/_posts/图片测试.md" />
         <option value="$PROJECT_DIR$/source/_posts/如何在Hexo中插入图片.md" />
+        <option value="$PROJECT_DIR$/source/_data/next.yml" />
       </list>
     </option>
   </component>
@@ -181,8 +181,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="718" />
-    <option name="y" value="32" />
+    <option name="x" value="17" />
     <option name="width" value="1676" />
     <option name="height" value="906" />
   </component>
@@ -202,6 +201,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -214,6 +214,12 @@
               <item name="GitBlog" type="b2602c69:ProjectViewProjectNode" />
               <item name="GitBlog" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="source" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="GitBlog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitBlog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="source" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="_data" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="GitBlog" type="b2602c69:ProjectViewProjectNode" />
@@ -237,7 +243,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -306,33 +311,34 @@
       <workItem from="1516180810612" duration="716000" />
       <workItem from="1516238020311" duration="11722000" />
       <workItem from="1516261612729" duration="747000" />
-      <workItem from="1516324291461" duration="1890000" />
+      <workItem from="1516324291461" duration="3872000" />
+      <workItem from="1516331573363" duration="148000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69868000" />
+    <option name="totallyTimeSpent" value="71998000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1328125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.114583336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944915" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944915" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -733,17 +739,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_data/next.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="479" column="26" lean-forward="false" selection-start-line="479" selection-start-column="26" selection-end-line="479" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
+        <state relative-caret-position="1058">
           <caret line="46" column="2" lean-forward="false" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
           <folding />
         </state>
@@ -752,7 +750,7 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/PDO的基本操作.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="23">
+          <first_editor relative-caret-position="437">
             <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="13" />
             <folding />
           </first_editor>
@@ -779,11 +777,19 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/如何在Hexo中插入图片.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="689">
-            <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <first_editor relative-caret-position="920">
+            <caret line="40" column="3" lean-forward="false" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_data/next.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="308" column="48" lean-forward="true" selection-start-line="308" selection-start-column="48" selection-end-line="308" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>

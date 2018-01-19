@@ -35,9 +35,9 @@
 </div>
 
 {% if theme.footer.powered %}
-  <div class="powered-by">{#
-  #}{{ __('footer.powered', '<a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a>') }}{#
-#}</div>
+  <div class="powered-by">
+  DGJungor's Blog
+  </div>
 {% endif %}
 
 {% if theme.footer.powered and theme.footer.theme.enable %}
@@ -45,12 +45,7 @@
 {% endif %}
 
 {% if theme.footer.theme.enable %}
-  <div class="theme-info">{#
-  #}{{ __('footer.theme') }} &mdash; {#
-  #}<a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">{#
-    #}NexT.{{ theme.scheme }}{#
-  #}</a>{% if theme.footer.theme.version %} v{{ theme.version }}{% endif %}{#
-#}</div>
+  <div class="theme-info">东莞俊哥 &mdash; jungor.cn</div>
 {% endif %}
 
 {% if theme.footer.custom_text %}
