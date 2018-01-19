@@ -31,7 +31,7 @@ favicon:
   #ms_browserconfig: /images/browserconfig.xml
 
 # Set default keywords (Use a comma to separate)
-keywords: "DGJungor's Blog, DGJungor,Jungor,东莞俊哥,东莞俊哥的博客"
+keywords: "DGJungor's Blog,DGJungor,Jungor,东莞俊哥,东莞俊哥的博客"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
