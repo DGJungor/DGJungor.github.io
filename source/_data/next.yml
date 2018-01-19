@@ -296,7 +296,7 @@ highlight_theme: night eighties
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 font:
-  enable: false
+  enable: true
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
   host:
@@ -316,26 +316,26 @@ font:
   # Fallback to `global` font settings.
   headings:
     external: true
-    family:
+    family: Microsoft YaHei
     size:
 
   # Font settings for posts.
   # Fallback to `global` font settings.
   posts:
     external: true
-    family:
+    family: PingFang SC
 
   # Font settings for Logo.
   # Fallback to `global` font settings.
   logo:
     external: true
-    family:
-    size:
+    family: Knewave 
+    size: 24
 
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family:
+    family: consolas
     size:
 
 
@@ -357,7 +357,7 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics: bfc8f6ee873b1c1e4d60b01ed393af0f
 
 # Duoshuo ShortName
 #duoshuo_shortname:
@@ -535,9 +535,9 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  enable: true
+  app_id: kqWqBkQ4PEEaNFgisU2QODXU-gzGzoHsz
+  app_key: 9O0YDoaVlxpKx7CGi8g15PIm
 
 # Another tool to show number of visitors to each article.
 # visit https://console.firebase.google.com/u/0/ to get apiKey and projectId
@@ -569,7 +569,7 @@ busuanzi_count:
 
 
 # Tencent analytics ID
-# tencent_analytics:
+tencent_analytics: 64907687
 
 # Tencent MTA ID
 # tencent_mta:
