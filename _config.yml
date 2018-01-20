@@ -81,8 +81,10 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/DGJungor/DGJungor.github.io.git
   branch: master
+  repo:
+    github: https://github.com/DGJungor/DGJungor.github.io.git
+    coding: https://git.coding.net/Jun4/Blog.git
 
 #==============================================================================================
 

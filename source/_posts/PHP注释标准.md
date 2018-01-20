@@ -1,7 +1,7 @@
 ---
 title: PHP注释标准
 date: 2017-12-28 14:23:17
-tags: 代码规范 
+tags: 代码规范
 ---
 
 # PHP中注释的规范与标准 #
@@ -38,7 +38,7 @@ tags: 代码规范
 
 ```
 
- 
+
 
 
 
@@ -82,8 +82,8 @@ tags: 代码规范
 
 11. @license
 相当于html标签中的,首先是URL，接着是要显示的内容
-例如[url=http://bbs.phpchina.com/”http://www.jigwang.com”]PHP那些事儿[/url]
-可以写作 @license http://www.jigwang.com PHP那些事儿
+例如[url=http://blog.jungor.com/”http://www.jungor.com”]DGJungor's blog [/url]
+可以写作 @license http://www.jungor.com DGJungor's blog
 
 12. @link
 类似于license
@@ -127,4 +127,3 @@ tags: 代码规范
 
 24. {@source}
 显示一段函数或方法的内容
-
