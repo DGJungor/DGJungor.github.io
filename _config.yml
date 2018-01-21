@@ -17,7 +17,8 @@ timezone:
 #url: //blog.jungor.cn
 url: http://blog.jungor.cn
 root: /
-permalink: :year/:month/:day/:title/
+#permalink: :year/:month/:day/:title/
+permalink: :year-:month-:day-:title.html
 permalink_defaults:
 
 # Directory
