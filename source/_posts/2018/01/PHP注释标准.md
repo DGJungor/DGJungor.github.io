@@ -82,8 +82,8 @@ tags: 代码规范
 
 11. @license
 相当于html标签中的,首先是URL，接着是要显示的内容
-例如[url=http://blog.jungor.com/”http://www.jungor.com”]DGJungor's blog [/url]
-可以写作 @license http://www.jungor.com DGJungor's blog
+例如[url=http://blog.jungor.com/”http://blog.jungor.com”]DGJungor's blog [/url]
+可以写作 @license http://blog.jungor.com DGJungor's blog
 
 12. @link
 类似于license
