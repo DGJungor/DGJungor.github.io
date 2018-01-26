@@ -2,7 +2,7 @@
 title: 'Linux/CentOS 下开启MySQL远程连接,远程管理数据库'
 date: 2018-01-04 13:53:17
 tags: [数据库,Linux,MySQL,CentOS]
-categories: 数据库
+categories: [数据库,Linux]
 ---
 
 > 当服务器没有运行PHP、没装phpMyAdmin的时候，远程管理MySQL就显得有必要了。
@@ -35,20 +35,20 @@ flush privileges;
 ```
 grant all privileges on *.* to 'root'@'192.168.137.99' identified by '123456' with grant option;
 flush privileges;
- 
+
 ## 第二步：设置防火墙，让 3306 端口对外可访问
 ```mysql
 iptables -I INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT
 # 查看规则是否生效
 iptables -L -n # 或者: service iptables status
- 
+
 # 此时生产环境是不安全的，远程管理之后应该关闭端口，删除之前添加的规则
 iptables -D INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT
 ```
 iptables -I INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT
 ### 查看规则是否生效
 iptables -L -n # 或者: service iptables status
- 
+
 ### 此时生产环境是不安全的，远程管理之后应该关闭端口，删除之前添加的规则
 iptables -D INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT
 注意：上面iptables添加/删除规则都是临时的，如果需要重启后也生效，需要保存修改:
@@ -65,4 +65,3 @@ vi /etc/sysconfig/iptables # 加上下面这行规则也是可以的
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT
 
 远程管理数据库的软件，Windows系统下可以使用SQLyog，用了几种远程软件，感觉这个用起来蛮不错的。
- 
