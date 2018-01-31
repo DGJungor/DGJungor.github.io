@@ -82,7 +82,7 @@ if($userInfo){
 ```
 
 cache的其他操作
-'''php
+```php
 <?php
 
 // 针对数值类型的缓存数据，可以使用自增自减操作
@@ -95,4 +95,4 @@ Cache::rm('name');      //删除缓存
 Cache::pull('name');    //获取并删除缓存 如果name值不存在，则返回null
 Cache::clear();         //清空缓存
 
-'''
+```
