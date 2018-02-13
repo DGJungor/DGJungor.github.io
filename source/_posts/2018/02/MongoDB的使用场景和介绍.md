@@ -3,6 +3,7 @@ title: MongoDB的使用场景和介绍
 date: 2018-02-13 13:36:43
 tags: [数据库,MongDB]
 categories: 数据库
+description: 
 ---
 
 MongoDB 是一个高性能，开源，无模式的文档型数据库，是当前 NoSQL 数据库产品中最热门的一种。它在许多场景下可用于替代传统的关系型数据库或键/值存储方式，MongoDB 使用 C++开发。MongoDB 的官方网站地址是：http://www.mongodb.org/
