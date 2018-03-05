@@ -7,17 +7,13 @@ title: DGJungor's Blog
 subtitle: 关于PHP,Python的技术博客
 description: 关于PHP,Python的技术博客,记录开发心得
 author: DGJungor
-language: zh-Hans
+language: zh-CN
 timezone:
-#keywords: DGJungor's Blog,DGJungor,Jungor,东莞俊哥,东莞俊哥的博客
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-###url: http://yoursite.com
-#url: //blog.jungor.cn
 url: http://blog.jungor.cn
 root: /
-#permalink: :year/:month/:day/:title/
 permalink: :year-:month-:day-:title.html
 permalink_defaults:
 
@@ -32,14 +28,13 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-# new_post_name: :title.md # File name of new posts
-new_post_name: :year/:month/:title.md # File name of new posts
+new_post_name: :year/:month/:title.md# File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: true
+post_asset_folder: false
 relative_link: false
 future: true
 highlight:
@@ -85,10 +80,8 @@ deploy:
   type: git
   branch: master
   repo:
-    github: https://github.com/DGJungor/DGJungor.github.io.git
+    github: git@github.com:DGJungor/DGJungor.github.io.git
     coding: https://git.coding.net/Jun4/Blog.git
-
-#==============================================================================================
 
 # Sitemap Setting
 sitemap:
@@ -101,32 +94,3 @@ search:
   field: post
   format: html
   limit: 10000
-
-
-#yilia 主题特殊配置
-#jsonContent:
-#  meta: false
-#  pages: false
-#  posts:
-#    title: true
-#    date: true
-#    path: true
-#    text: false
-#    raw: falseh
-#    content: false
-#    slug: false
-#    updated: false
-#    comments: false
-#    link: false
-#    permalink: false
-#    excerpt: false
-#    categories: false
-#    tags: true
-
-
-
-# algolia 搜索服务
-#algolia:
-#  applicationID: '2DFEPNN95W'
-#  indexName: 'github'
-#  chunkSize: 5000
