@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[MongoDB的使用场景和介绍]]></title>
+    <url>%2F2018-02-13-MongoDB%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E5%92%8C%E4%BB%8B%E7%BB%8D.html</url>
+    <content type="text"><![CDATA[MongoDB 是一个高性能，开源，无模式的文档型数据库，是当前 NoSQL 数据库产品中最热门的一种。它在许多场景下可用于替代传统的关系型数据库或键/值存储方式，MongoDB 使用 C++开发。MongoDB 的官方网站地址是：http://www.mongodb.org/ 为什么要用 NoSQLNoSQL,全称是”Not Only Sql”,指的是非关系型的数据库，这类数据库主要有这些特点：非关系型的、分布式的、开源的、水平可扩展的。原始的目的是为了大规模 web 应用，NoSQL 被我们用得最多的当数 key-value 存储，当然还有其他的文档型的、列存储、图型数据库、xml 数据库等 目前新浪微博的Redis和Google的Bigtable以及Amazon的SimpleDB使用的就是 NoSQL 型数据库。NoSQL 数据存储不需要固定的表结构，通常也不存在连接操作。 MongoDB 是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。MongoDB 最大的特点是他支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。它是一个面向集合的,模式自由的文档型数据库。 面向集合（Collenction-Orented）意思是数据被分组存储在数据集中， 被称为一个集合（Collenction)。每个集合在数据库中都有一个唯一的标识名，并且可以包含无限数目的文档。集合的概念类似关系型数据库（RDBMS）里的表（table），不同的是它不需要定义任何模式（schema)。 模式自由（schema-free)意味着对于存储在 MongoDB 数据库中的文件，我们不需要知道它的任何结构定义。提了这么多次”无模式”或”模式自由”，它到是个什么概念呢？例如，下面两个记录可以存在于同一个集合里面：{“welcome” : “Beijing”}{“age” : 25} 文档型意思是我们存储的数据是键-值对的集合,键是字符串,值可以是数据类型集合里的任意类型,包括数组和文档. 我们把这个数据格式称作 “BSON” 即 “Binary Serialized dOcument Notation.” 功能 面向集合的存储：适合存储对象及 JSON 形式的数据 动态查询：MongoDB 支持丰富的查询表达式。查询指令使用 JSON 形式的标记，可轻易查询文档中内嵌的对象及数组 完整的索引支持：包括文档内嵌对象及数组。MongoDB 的查询优化器会分析查询表达式，并生成一个高效的查询计划 查询监视：MongoDB 包含一系列监视工具用于分析数据库操作的性能 复制及自动故障转移：MongoDB 数据库支持服务器之间的数据复制，支持主-从模式及服务器之间的相互复制。复制的主要目标是提供冗余及自动故障转移 高效的传统存储方式：支持二进制数据及大型对象（如照片或图片） 自动分片以支持云级别的伸缩性：自动分片功能支持水平的数据库集群，可动态添加额外的机器 适用场合 网站数据：MongoDB 非常适合实时的插入，更新与查询，并具备网站实时数据存储所需的复制及高度伸缩性 缓存：由于性能很高，MongoDB 也适合作为信息基础设施的缓存层。在系统重启之后，由 MongoDB 搭建的持久化缓存层可以避免下层的数据源过载 大尺寸，低价值的数据：使用传统的关系型数据库存储一些数据时可能会比较昂贵，在此之前，很多时候程序员往往会选择传统的文件进行存储 高伸缩性的场景：MongoDB 非常适合由数十或数百台服务器组成的数据库。MongoDB的路线图中已经包含对 MapReduce 引擎的内置支持 用于对象及 JSON 数据的存储：MongoDB 的 BSON 数据格式非常适合文档化格式的存储及查询]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>MongDB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[基于canal 的 mysql 与 redis/memcached/mongodb 的 nosql 数据实时同步方案 案例，canal client]]></title>
+    <url>%2F2018-02-01-%E5%9F%BA%E4%BA%8Ecanal-%E7%9A%84-mysql-%E4%B8%8E-redis-memcached-mongodb-%E7%9A%84-nosql-%E6%95%B0%E6%8D%AE%E5%AE%9E%E6%97%B6%E5%90%8C%E6%AD%A5%E6%96%B9%E6%A1%88-%E6%A1%88%E4%BE%8B%EF%BC%8Ccanal-client.html</url>
+    <content type="text"><![CDATA[下图是最基本的web服务器的结构图。基于 Canal 的 MySql RabbitMQ Redis/memcached/mongodb 的nosql同步 （多读、nosql延时不严格 需求） 1.mysql主从配置 2.对mysql binlog(row) parser 这一步交给canal 3.MQ对解析后binlog增量数据的推送 4.对MQ数据的消费（接收+数据解析，考虑消费速度，MQ队列的阻塞） 5.数据写入/修改到nosql （redis的主从/hash分片） 6.保证对应关系的简单性：一个mysql表对应一个 redis实例（redis单线程，多实例保证分流不阻塞），关联关系数据交给接口业务 数据：mysql-&gt;binlog-&gt;MQ-&gt;redis(不过期、关闭RDB、AOF保证读写性能) （nosql数据仅用crontab脚本维护） 请求：http-&gt;webserver-&gt;redis(有数据)-&gt;返回数据 （完全避免用户直接读取mysql） -&gt;redis(无数据)-&gt;返回空 7.可将它视为一个触发器，binlog为记录触发事件，canal的作用是将事件实时通知出来，并将binlog解析成了所有语言可读的工具。 在事件传输的各个环节 提高 可用性 和 扩展性 （加入MQ等方法）最终提高系统的稳定。 传统 Mysql Redis/memcached nosql的缓存 （业务同步） 从cache读取数据-&gt; 1.对数据在mysql的hash算法分布(db/table/分区)，每个hash为节点（nosql数据全部失效时候，可保证mysql各节点可支持直接读取的性能） 2.mysql主从 3.nosql数据的hash算法分布(多实例、DB)，每个hash为节点 4.nosql数据震荡处理 （当某节点挂了寻找替代节点算法（多层hash替代节点）。。。） 5.恢复节点数据 6.请求：http-&gt;webserver-&gt;【对key计算一致性hash节点】-&gt;connect对应的redis实例 -&gt;1.redis(有数据)-&gt; 返回数据 -&gt;2.redis(无数据)-&gt; mysql (并写入数据redis) -&gt; 返回数据 -&gt;3.redis节点挂掉-&gt; 业务寻址hash替代节点 -&gt; 3.1 redis(有数据) -&gt; 返回数据 -&gt; 3.2 redis(无数据) -&gt; mysql(并写入数据redis) -&gt; 返回数据 为什么要使用消息队列（MQ）进行binlog传输: 1.增加缓冲，binlog生产端（canal client）只负责生产而不需要考虑消费端的消费能力, 不等待阻塞。 2.binlog 消费端: 可实时根据MQ消息的堆积情况，动态 增加/减少 消费端的数量，达到合理的资源利用和消费 部署: 阿里canal纯java开发，所以要先安装java环境 安装jdk(推荐jdk1.8): 安装过程参考网上资料，（注意环境变量配置） mysql配置： 1.编辑mysql配置文件 $ sudo vim /etc/my.cnf [mysqld] log-bin=mysql-bin #binlog文件名（也可以使用绝对路径） binlog-format=ROW #选择row模式 server_id=1 #实例唯一ID，不能和canal的slaveId重复 保存并退出，并重启mysql $ sudo service mysql restart 2.创建 mysql账号密码（账号密码自定 权限自定） CREATE USER canal IDENTIFIED BY &apos;canal&apos;; GRANT SELECT, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO &apos;canal&apos;@&apos;%&apos;; -- GRANT ALL PRIVILEGES ON *.* TO &apos;canal&apos;@&apos;%&apos; ; FLUSH PRIVILEGES; canal server 配置启动： canal server 模拟mysql从库并向mysql发送dump命令获取mysql binlog数据。 1.下载解压项目，这里提供了1.0.22版本: [canal.deployer-1.0.22.tar.gz](https://github.com/liukelin/canal_mysql_nosql_sync/releases) 可从阿里项目下载最新版本 deployer ： [https://github.com/alibaba/canal/releases](https://github.com/alibaba/canal/releases) 2.配置项目： # 公共配置 $ sudo vim conf/canal.properties canal.port= 11111 # canal server 运行端口，保证该端口为占用状态，或者使用其他未占用端口 保存退出。 # 实例配置 $ sudo vim conf/example/instance.properties # position info canal.instance.master.address = 127.0.0.1:3306 # mysql连接 canal.instance.dbUsername = canal # mysql账号 canal.instance.dbPassword = canal # 密码 canal.instance.defaultDatabaseName = test # 需要同步的库名 canal.instance.connectionCharset = UTF-8 # mysql编码 保存退出。 更多配置查看: [http://agapple.iteye.com/blog/1831873](http://agapple.iteye.com/blog/1831873) 3.启动： $ sh bin/startup.sh 日志文件： $ less logs/canal/canal.log # canal server端运行日志 $ less logs/example/example.log # canal client端连接日志 $ logs/example/meta.log # 实例binlog 读取记录文件（记录变更位置，默认为新增变更(tail)） canal client 配置启动： canal client将从canal server获取的binlog数据最终以json行格式保存到指定文件(也可省略这步，直接发送到MQ)。 binlog生产端和消费端的之间，增加MQ作为缓冲，增加容错度和动态扩展性 1.下载解压项目，这里自己写了个基于1.0.22版本的项目: [canal_client1.0.22.zip](https://github.com/liukelin/canal_mysql_nosql_sync/releases) 源码查看: [canal-client](https://github.com/liukelin/canal_mysql_nosql_sync/tree/master/canal-client) 2.基本配置 $vim conf/canal.properties # cancal server host， 上面 canal server的IP canal.server.host = 127.0.0.1 # cancal server port，上面 canal server的启动端口 canal.server.port = 11111 # 数据保存路径 ，自行指定 canal.binlog.dir = db_data # 可选rabbitmq/redis/kafka 作为队列（这里使用 rabbitmq 作为队列传输） canal.mq = rabbitmq ###### rabbitmq 基本配置 ##### rabbitmq.host = 127.0.0.1 rabbitmq.port = 5672 rabbitmq.user = test rabbitmq.pass = 123456 保存退出。 3.启动canal client： $ sh start_canal_client.sh 修改mysql数据触发。 最终结果： eventType ：操作类型（UPDATE/INSERTDELETE） db： 涉及库 table: 涉及表 before:变更前数据 after: 变更后数据 time: 操作时间 $less db_data/binlog_xxxx.log {&quot;binlog&quot;:&quot;mysql-bin.000009:1235&quot;,&quot;db&quot;:&quot;test&quot;,&quot;table&quot;:&quot;users&quot;,&quot;eventType&quot;:&quot;UPDATE&quot;,&quot;before&quot;:{&quot;uid&quot;:&quot;8&quot;,&quot;username&quot;:&quot;duobao153713223&quot;},&quot;after&quot;:{&quot;uid&quot;:&quot;8&quot;,&quot;username&quot;:&quot;duobao153713223&quot;},&quot;time&quot;:&quot;2016-08-22 17:47:25&quot;} {&quot;binlog&quot;:&quot;mysql-bin.000009:1533&quot;,&quot;db&quot;:&quot;test&quot;,&quot;table&quot;:&quot;users&quot;,&quot;eventType&quot;:&quot;DELETE&quot;,&quot;before&quot;:&quot;&quot;,&quot;after&quot;:{&quot;uid&quot;:&quot;8&quot;,&quot;username&quot;:&quot;duobao153713223&quot;},&quot;time&quot;:&quot;2016-08-22 17:48:09&quot;} {&quot;binlog&quot;:&quot;mysql-bin.000009:1790&quot;,&quot;db&quot;:&quot;test&quot;,&quot;table&quot;:&quot;users&quot;,&quot;eventType&quot;:&quot;INSERT&quot;,&quot;before&quot;:&quot;&quot;,&quot;after&quot;:{&quot;uid&quot;:&quot;9&quot;,&quot;username&quot;:&quot;test2&quot;},&quot;time&quot;:&quot;2016-08-22 17:48:45&quot;} 消费数据：（这里使用python3/rabbitmq/redis 作为案例，实际可根据业务需求） 流程 ：file数据-&gt; MQ -&gt; nosql MQ: rabbitMQ 语言：python3 NoSql: redis 多项目订阅需求，如：client1和client2 需要消费这些数据， 他们得到的数据一样 开始考虑直接用队列： 队列数据： [A, B, C, D] client1 ： 消费进程1：获取AB 消费进程2：获取CD client2 ： 消费进程1：获取AB 消费进程2：获取CD 这样的话，如果使用rabbitMQ 就必须给每个 client 提供独立的队列。并独立消费 1、使用kafka，利用他的分组group,每个client 为一个组，这样就可保证，数据给每个组一致。 2、对每个项目需求开独立的 canal server instance 和 canal client实例 配置： 语言：python3 pip：pika redis 项目代码： python_sync_nosql 修改配置文件config.py # 最终存储数据redis redis_host = &apos;127.0.0.1&apos; redis_port = 6379 ###### rabbitmq 基本配置 ##### rabbitmq_host = &apos;127.0.0.1&apos; rabbitmq_port = 5672 rabbitmq_user = &apos;test&apos; rabbitmq_pass = &apos;123456&apos; # 设置对每个table存储使用的key字段 redis_cache_map = { # db &apos;test&apos;:{ # table ： kid &apos;users&apos;:&apos;uid&apos;, } } 运行脚本： $ python3 startup.py 数据最终存储为Redis 的 hash结构，key为 db_table_id 同步到MongoDB同理 这里的demo是将表数据映射到 mongodb 结构 db =&gt; db table =&gt; 集合 column=&gt; coll 目录结构123456789101112131415├─canal-client/ 封装的canal client客户端 和 消息队列MQ 项目│ ├─src/ 项目代码│ ├─lib/ jar包依赖│ ├─conf/ 配置文件│ ├─canal_client.jar 启动jar│ └─start_canal_client.sh 启动文件│ ├─python_sync_nosql/ 消费MQ binlog数据, 将数据写入到NoSql demo│ ├─queue_rabbitmq.py rabbitmq 消费端│ ├─sync_redis.py 写入到redis│ ├─sync_mongo.py 写入到mongo│ ├─config.py 配置│ └─startup.py 启动入口└─ 总结： 1.使用MQ作为传输，可提高容错度，并且可以起到一个消费速度的缓冲，在程序上加上对队列积压数据的监控，可实时增加或减少MQ消费进程的数量。 2.为了提高binlog数据的可靠消费，建议使用带有ACK功能的MQ 做为消息队列使用 3.为了避免多进程对MQ消费速度的时序先后不可控，建议binlog数据只作为触发条件（使用id从mysql获取最新数据）作为数据使用，而不作为具体数据使用。 4. 接下来我会继续完善otter的实际案例 ... 资源下载 canal server 服务端deployer： https://github.com/alibaba/canal/releases/tag/canal-1.0.22 canal client 客户端： https://github.com/liukelin/canal_mysql_nosql_sync/releases/tag/1.0.22.2 阿里canal项目原始地址：https://github.com/alibaba/canal 数据消费写入nosql例子: python_sync_nosql 这里是消费rabbitmq数据最终同步到redis]]></content>
+      <categories>
+        <category>设计</category>
+      </categories>
+      <tags>
+        <tag>canal</tag>
+        <tag>数据同步</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[THINKPHP5 缓存应用的实例]]></title>
+    <url>%2F2018-01-31-THINKPHP5-%E7%BC%93%E5%AD%98%E5%BA%94%E7%94%A8%E7%9A%84%E5%AE%9E%E4%BE%8B.html</url>
+    <content type="text"><![CDATA[合理的运存缓存 可是加快网站加载速度 减低网站服务器的负荷 在THINKPHP5中 缓存的配置放在了config.php文件中 代码如下1234567891011121314// +----------------------------------------------------------------------// | 缓存设置// +----------------------------------------------------------------------'cache' =&gt; [ // 驱动方式 'type' =&gt; 'File', // 缓存保存目录 'path' =&gt; CACHE_PATH, // 缓存前缀 'prefix' =&gt; '', // 缓存有效期 0表示永久缓存 'expire' =&gt; 0,], 如何设置缓存 可以使用静态方法 123Cache::set('key',$value,3600);//存储缓存Cache::get('key');//获取缓存 也可是先实例化再调用 12345$cache_model=new Cache();//实例化缓存模型$info=$cache_model-&gt;get($cache_key);//获取缓存$cache_model-&gt;set($cache_key,$info,$cache_expire_time);//设置缓存 一个简单的实例123456789101112131415161718192021222324252627&lt;?php//实例化$cacheModel = new Cache();//设置缓存kuy$cacheKey = 'userInfo123';//缓存时间600秒$cacheExpireTime = 600//获取缓存$userInfo = $cacheModel-&gt;get($cacheKey);//判断是否从缓存中获取到数据if($userInfo)&#123; //缓存中有数据 return $userInfo;&#125;else &#123; //没有获取到数据 重新从别的模型获取数据 放入缓存 $userInfo = $model-&gt;getIndo(); //添加数据到缓存中 $cacheModel-&gt;set($cacheKey,$userInfo,$cacheExpireTime);&#125; cache的其他操作1234567891011&lt;?php// 针对数值类型的缓存数据，可以使用自增自减操作Cache::inc('name'); // name自增（步进值为1）Cache::inc('name',3); // name自增（步进值为3）Cache::dec('name'); // name自减（步进值为1）Cache::dec('name',3); // name自减（步进值为3）Cache::get('name',''); // 表示如果name值不存在，则返回空字符串。Cache::rm('name'); //删除缓存Cache::pull('name'); //获取并删除缓存 如果name值不存在，则返回nullCache::clear(); //清空缓存]]></content>
+      <categories>
+        <category>PHP</category>
+        <category>框架</category>
+        <category>ThinkPHP5</category>
+      </categories>
+      <tags>
+        <tag>缓存</tag>
+        <tag>ThinkPHP5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[负载均衡不同服务器之间如何同步文件]]></title>
+    <url>%2F2018-01-31-%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E4%B8%8D%E5%90%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B9%8B%E9%97%B4%E5%A6%82%E4%BD%95%E5%90%8C%E6%AD%A5%E6%96%87%E4%BB%B6.html</url>
+    <content type="text"><![CDATA[inotify+rsync待补]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>负载均衡</tag>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[站内系统消息信息系统数据库设计]]></title>
+    <url>%2F2018-01-30-%E7%AB%99%E5%86%85%E7%B3%BB%E7%BB%9F%E6%B6%88%E6%81%AF%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1.html</url>
+    <content type="text"><![CDATA[站内信系统数据库设计很多网站系统(cms系统、sns系统等)，都有站内信的功能。站内信不同于电子邮件，电子邮件通过专门的邮件服务器发送、保存。而站内信是系统内的消息，说白了，站内信的实现，就是通过数据库插入记录来实现的。 站内信有两个基本功能: 点到点的消息传送。用户给用户发送站内信;管理员给用户发送站内信。 点到面的消息传送。管理员给用户(满足一定条件的用户群)群发消息。 主要分析点到面的站内信设计 第一种情况:(用户量比较少百级别) 这种情况，由于用户量比较少，因此没有必要考虑数据库的优化,采用简单的一张表就可以实现了，对系统的设计也来的比较简单，后期也比较容易维护，是典型的用空间换时间的做法。 表message: id(主键)、sendId(发送者编号)、receiveId(接收者编号)、messageContent（站内信内容）、statue(站内信查看状态)、createDate(站内信发送时间) 第二种情况:(用户量中量级别) 如果还是按照第一种那样来设计数据库，那么每次群发一次站内信，就要插入几万条数据，占用字节最大的就是messageContext字段，并且这几万条记录的messageContent内容是相同的。所以要考虑分表来设计了。把messageContext单独抽取到另外一张表中。 表message:id(主键)、sendId(发送者编号)、receiveId(接收者编号)、messageContextId（站内信内容Id）、statue(站内信查看状态)表messageContext: messageContentId(主键)、messageContent(站内信内容)、createDate 第三种情况:(用户量上百万级别) 如果采用第二种情况，其实是做了很多无用的message表插入操作的。因为这几百万用户只有百分之10左右是活跃用户，有很多用户是不登入app(网站)，所以我们得设计当他们登入的时候我们才执行插入操作。数据库的设计和第二种情况是一样的，只是插入的实际我们要重新选择。 备注:站内信的statue状态应该有三个值(未读、已读、删除状态)。用户点了删除知识逻辑上的删除，并没有在物理层数据库删除。我们给用户一个假象，我们底层的实现就是改变statue状态为删除就ok.(数据是一个企业的核心，虽然这种数据没什么价值)。为了扩展我们还可以存在messageStatue(站内信状态)、readStatue(用户查看状态)messageStatue 指的是发给谁(private、public)]]></content>
+      <categories>
+        <category>数据库</category>
+        <category>设计</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>设计</tag>
+        <tag>站内消息</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[如何对正确对密码哈希加盐]]></title>
+    <url>%2F2018-01-21-%E5%A6%82%E4%BD%95%E5%AF%B9%E6%AD%A3%E7%A1%AE%E5%AF%B9%E5%AF%86%E7%A0%81%E5%93%88%E5%B8%8C%E5%8A%A0%E7%9B%90.html</url>
+    <content type="text"><![CDATA[作为一名Web开发者,知道怎么保护用户的密码非常重要.最好的办法就是对密码进行哈希加盐. 为什么密码需要进行哈希？123hash("hello") = 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824hash("hbllo") = 58756879c05c68dfac9866712fad6a93f8146f337a69afe7dd238f3364946366hash("waltz") = c0e81794384491161f1777c232bc6bd9ec38f616560b120fda8e90f383853542 哈希算法是一个单向函数。它可以将任何大小的数据转化为定长的“指纹”，并且无法被反向计算。另外，即使数据源只改动了一丁点，哈希的结果也会完全不同（参考上面的例子）。这样的特性使得它非常适合用于保存密码，因为我们需要加密后的密码无法被解密，同时也能保证正确校验每个用户的密码。 在基于哈希加密的账户系统中，通常用户注册和认证的流程是这样的： 用户注册一个帐号 密码经过哈希加密储存在数据库中。只要密码被写入磁盘，任何时候都不允许是明文 当用户登录的时候，从数据库取出已经加密的密码，和经过哈希的用户输入进行对比 如果哈希值相同，用户获得登入授权，否则，会被告知输入了无效的登录信息 每当有用户尝试登录，以上两步都会重复 在第4步中，永远不要告诉用户到底是用户名错了，还是密码错了。只需要给出一个大概的提示，比如“无效的用户名或密码”。这可以防止攻击者在不知道密码的情况下，枚举出有效的用户名。 需要提到的是，用于保护密码的哈希函数和你在数据结构中学到的哈希函数是不同的。比如用于实现哈希表这之类数据结构的哈希函数，它们的目标是快速查找，而不是高安全性。只有加密哈希函数才能用于保护密码，例如SHA256，SHA512，RipeMD和WHIRLPOOL。 也许你很容易就认为只需要简单地执行一遍加密哈希函数，密码就能安全，那么你大错特错了。有太多的办法可以快速地把密码从简单哈希值中恢复出来，但也有很多比较容易实现的技术能使攻击者的效率大大降低。黑客的进步也在激励着这些技术的进步，比如这样一个网站：你可以提交一系列待破解的哈希值，并且在不到1秒的时间内得到了结果。显然，简单哈希加密并不能满足我们对安全性的需求。 加盐1234hash("hello") = 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824hash("hello" + "QxLUF1bgIAdeQX") = 9e209040c863f84a31e719795b2577523954739fe5ed3b58a75cff2127075ed1hash("hello" + "bv5PehSMfV11Cd") = d1d3ec2e6f20fd420d50e2642992841d8338a314b8ea157c9e18477aaef226abhash("hello" + "YYLmfY6IehjZMQ") = a49670c3c18b9e079b9cfaf51634f563dc8ae3070db2c4a8544305df1b60f007 查表法和彩虹表只有在所有密码都以相同方式进行哈希加密时才有效。如果两个用户密码相同，那么他们密码的哈希值也是相同的。我们可以通过“随机化”哈希来阻止这类攻击，于是当相同的密码被哈希两次之后，得到的值就不相同了。 比如可以在密码中混入一段“随机”的字符串再进行哈希加密，这个被字符串被称作盐值。如同上面例子所展示的，这使得同一个密码每次都被加密为完全不同的字符串。为了校验密码是否正确，我们需要储存盐值。通常和密码哈希值一起存放在账户数据库中，或者直接存为哈希字符串的一部分。 盐值并不需要保密，由于随机化了哈希值，查表法、反向查表法和彩虹表都不再有效。攻击者无法确知盐值，于是就不能预先计算出一个查询表或者彩虹表。这样每个用户的密码都混入不同的盐值后再进行哈希，因此反向查表法也变得难以实施。 哈希碰撞哈希函数将任意大小的数据转化为定长的字符串，因此其中一定有些输入经过哈希计算之后得到了相同的结果。加密哈希函数的设计就是为了使这样的碰撞尽可能难以被发现。随着时间流逝，密码学家发现攻击者越来越容易找到碰撞了，最近的例子就是MD5算法的碰撞已经确定被发现了。 碰撞攻击的出现表明很可能有一个和用户密码不同的字符串却和它有着相同的哈希值。然而，即使在MD5这样脆弱的哈希函数中找到碰撞也需要耗费大量的计算，因此这样的碰撞“意外地”在实际中出现的可能性是很低的。于是站在实用性的角度上可以这么说，加盐MD5和加盐SHA256的安全性是一样的。不过可能的话，使用本身更安全的哈希函数总是好的，比如SHA256、SHA512、RipeMD或者WHIRLPOOL。 如何正确使用哈希加密基本要素：加盐哈希在前文中我们已经看到，利用查表法和彩虹表，普通哈希加密是多么容易被恶意攻击者破解，也知道了可以通过随机加盐的办法也解决这个问题。那么到底应该使用怎样的盐值呢，又如何把它混入密码？ 盐值应该使用基于加密的伪随机数生成器（Cryptographically Secure Pseudo-Random Number Generator – CSPRNG）来生成。CSPRNG和普通的随机数生成器有很大不同，如C语言中的rand()函数。物如其名，CSPRNG专门被设计成用于加密，它能提供高度随机和无法预测的随机数。我们显然不希望自己的盐值被猜测到，所以一定要使用CSPRNG。下面的表格列出了当前主流编程语言中的CSPRNG方法: Platform CSPRNG PHP mcrypt_create_iv, openssl_random_pseudo_bytes Python os.urandom 对于每个用户的每个密码，盐值都应该是独一无二的。每当有新用户注册或者修改密码，都应该使用新的盐值进行加密。并且这个盐值也应该足够长，使得有足够多的盐值以供加密。一个好的标准的是：盐值至少和哈希函数的输出一样长；盐值应该被储存和密码哈希一起储存在账户数据表中。 储密码的步骤 使用CSPRNG生成一个长度足够的盐值 将盐值混入密码，并使用标准的加密哈希函数进行加密，如SHA256 把哈希值和盐值一起存入数据库中对应此用户的那条记录 校验密码的步骤 从数据库取出用户的密码哈希值和对应盐值 将盐值混入用户输入的密码，并且使用同样的哈希函数进行加密 比较上一步的结果和数据库储存的哈希值是否相同，如果相同那么密码正确，反之密码错误 php中加密的例子加盐Hash:1234&lt;?php$salt=base64_encode(mcrypt_create_iv(32,MCRYPT_DEV_RANDOM)); $password=sha1($register_password.$salt); ?&gt; 解释:首先使用mcrypt，产生电脑随机生成的，专门用户加密的随机数函数。第二步，把得到的随机数通过base64加密，使其变长并且不利于猜解。第三步，把得出的盐拼接到密码的后面，再对其使用sha1进行哈希再把password存入到用户的数据库。 PS：为何不用静态的salt？没有必要，使用一个动态随机足够长的盐足矣。为何不用MD5？因为长度不够。为何没有使用多次HASH？因为这样反而容易发生碰撞。HASH好之后怎么使用“腌制”好的密码？用户注册-&gt;提交密码-&gt;产生salt-&gt;腌制好的密码存入数据库-&gt;salt存入数据库。用户登录-&gt;提交密码-&gt;调用salt接到提交密码的后面-&gt;进行HASH-&gt;调用之前注册腌制好的密码-&gt;对比HASH值是否和这个密码相同 作为一名Web开发者,知道怎么保护用户的密码非常重要.最好的办法就是对密码进行哈希加盐.]]></content>
+      <categories>
+        <category>安全</category>
+        <category>加密</category>
+      </categories>
+      <tags>
+        <tag>安全</tag>
+        <tag>加密</tag>
+        <tag>算法</tag>
+        <tag>哈希</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[如何在Hexo中插入图片]]></title>
+    <url>%2F2018-01-19-%E5%A6%82%E4%BD%95%E5%9C%A8Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87.html</url>
+    <content type="text"><![CDATA[资源文件夹资源（Asset）代表 source 文件夹中除了文章以外的所有文件，例如图片、CSS、JS 文件等。比方说，如果你的Hexo项目中只有少量图片，那最简单的方法就是将它们放在 source/images 文件夹中。然后通过类似于 ![](/images/image.jpg) 的方法访问它们。 文章资源文件夹对于那些想要更有规律地提供图片和其他资源以及想要将他们的资源分布在各个文章上的人来说，Hexo也提供了更组织化的方式来管理资源。这个稍微有些复杂但是管理资源非常方便的功能可以通过将 config.yml 文件中的 post_asset_folder 选项设为 true 来打开。 12_config.ymlpost_asset_folder: true 当资源文件管理功能打开后，Hexo将会在你每一次通过 hexo new [layout] 命令创建新文章时自动创建一个文件夹。这个资源文件夹将会有与这个 markdown 文件一样的名字。将所有与你的文章有关的资源放在这个关联文件夹中之后，你可以通过相对路径来引用它们，这样你就得到了一个更简单而且方便得多的工作流。 相对路径引用的标签插件通过常规的 markdown 语法和相对路径来引用图片和其它资源可能会导致它们在存档页或者主页上显示不正确。在Hexo 2时代，社区创建了很多插件来解决这个问题。但是，随着Hexo 3 的发布，许多新的标签插件被加入到了核心代码中。这使得你可以更简单地在文章中引用你的资源。 123&#123;% asset_path slug %&#125;&#123;% asset_img slug [title] %&#125;&#123;% asset_link slug [title] %&#125; 比如说：当你打开文章资源文件夹功能后，你把一个 example.jpg 图片放在了你的资源文件夹中，如果通过使用相对路径的常规 markdown 语法 ![](/example.jpg) ，它将 不会 出现在首页上。（但是它会在文章中按你期待的方式工作） 正确的引用图片方式是使用下列的标签插件而不是 markdown ：1&#123;% asset_img example.jpg This is an example image %&#125; 通过这种方式，图片将会同时出现在文章和主页以及归档页中。]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Hexo美化</tag>
+        <tag>Hexo技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PHP中private和public还有protected的区别]]></title>
+    <url>%2F2018-01-18-PHP%E4%B8%ADprivate%E5%92%8Cpublic%E8%BF%98%E6%9C%89protected%E7%9A%84%E5%8C%BA%E5%88%AB.html</url>
+    <content type="text"><![CDATA[public 表示全局，类内部外部子类都可以访问； private表示私有的，只有本类内部可以使用； protected表示受保护的，只有本类或子类或父类中可以访问； 12345678910111213141516171819202122232425262728293031323334&lt;?php //父类 class father&#123; public function a()&#123; echo "function a"; &#125; private function b()&#123; echo "function b"; &#125; protected function c()&#123; echo "function c"; &#125; &#125; //子类 class child extends father&#123; function d()&#123; parent::a();//调用父类的a方法 &#125; function e()&#123; parent::c(); //调用父类的c方法 &#125; function f()&#123; parent::b(); //调用父类的b方法 &#125; &#125; $father=new father(); $father-&gt;a(); $father-&gt;b(); //显示错误 外部无法调用私有的方法 Call to protected method father::b() $father-&gt;c(); //显示错误 外部无法调用受保护的方法Call to private method father::c() $chlid=new child(); $chlid-&gt;d(); $chlid-&gt;e(); $chlid-&gt;f();//显示错误 无法调用父类private的方法 Call to private method father::b()?&gt;]]></content>
+      <categories>
+        <category>PHP</category>
+        <category>概念</category>
+      </categories>
+      <tags>
+        <tag>PHP概念</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[什么是单例??为什么要使用单例??]]></title>
+    <url>%2F2018-01-16-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%95%E4%BE%8B-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E5%8D%95%E4%BE%8B.html</url>
+    <content type="text"><![CDATA[到底什么是但单例呢?单例又可以用在什么地方呢?我们可以先从了解单例的特点开始了解 单例的特点主要有3个 只能有一个实例 必须自行创建这个实例 必须给其他对象提供这一实例 下面 我们还可以说下 php的单例有什么作用 在面向对象的方式开发中,我们无可避免地要多次new,如果使用了单例模式,则可以避免大量的new,从而减少资源的消耗. 如果系统中需要有一个类来全局控制某些配置信息, 那么使用单例模式可以很方便的实现. 这个可以参看zend framework的FrontController部分. 在一次页面请求中, 便于进行调试, 因为所有的代码(例如数据库操作类db)都集中在一个类中, 我们可以在类中设置钩子, 输出日志，从而避免到处var_dump, echo. 单例模式的要点如下 $_instance 必须声明为静态的私有变量 构造函数和克隆函数必须声明为私有的,这是为了防止外部程序new 类从而失去单例模式的意义 getInstance()方法必须声明为公有的,必须调用此方法以返回唯一实例的一个引用 ::操作符只能访问静态变量或静态函数 PHP的单例模式是相对而言的,因为PHP的解释运行机制使得每个PHP页面被解释执行后，所有的相关资源都会被回收。 也就是说，PHP在语言级别上没有办法让某个对象常驻内存。在PHP中，所有的变量都是页面级的，无论是全局变量， 还是类的静态成员，都会在页面执行完毕后被清空,结果会重新建立新的对象，这样也就完全失去了Singleton的意义。 不过,在实际应用中同一个页面中可能会存在多个业务逻辑,这时单例模式就起到了很重要的作用,有效的避免了重复 new 对象(注: new 对象会消耗内存资源)这么一个行为,所以我们说PHP的单例模式是相对而言的.]]></content>
+      <tags>
+        <tag>php</tag>
+        <tag>单例</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[在CentOS安装git]]></title>
+    <url>%2F2018-01-10-%E5%9C%A8CentOS%E5%AE%89%E8%A3%85git.html</url>
+    <content type="text"><![CDATA[1.通过winscp将window的git包上传到Linux的/root/目录下1下载地址：https://www.kernel.org/pub/software/scm/git/ 2.解压git1# tar -zxvf git-2.9.0.tar.gz 3.安装curl-devel12//使用yum安装之前，记得挂载# yum -y install curl-devel 4.安装git1234567# cd git-2.9.0# ./configure --prefix=/usr/local/git# make# make install 5.将git命令加入到环境变量# vim /etc/profile12//将下面这一行放到/etc/profile文件末尾export PATH=/usr/local/git/bin:$PATH]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>CentOS</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>CentOS</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[在Ubuntu下samba的配置]]></title>
+    <url>%2F2018-01-10-%E5%9C%A8Ubuntu%E4%B8%8Bsamba%E7%9A%84%E9%85%8D%E7%BD%AE.html</url>
+    <content type="text"><![CDATA[一、安装Ubuntu samba服务器123$ sudo apt-get install samba$ sudo apt-get install smbclient # Linux客户端测试用 二、创建samba配置文件1. 备份原配置文件1$ sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak 2. 创建共享目录1$ sudo mkdir -p /home/share 一般来说，该目录的权限为755，将其改为777之后，Owner之外的其他用户才有权限写入。1$ sudo chmod 777 /home/share 3. 修改配置文件1$ sudo vim /etc/samba/smb.conf 在smb.conf最后添加：123456789[share] path = /home/share browseable = yes writable = yes comment = smb share test 另外，总结一下常见的samba配置及说明：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455[share] # 该共享的共享名 comment = smb share test # 该共享的备注 path = /home/share # 共享路径 allow hosts = host(subnet) # 设置该Samba服务器允许的工作组或者域 deny hosts = host(subnet) # 设置该Samba服务器拒绝的工作组或者域 available = yes|no # 设置该共享目录是否可用 browseable = yes|no # 设置该共享目录是否可显示 writable = yes|no # 指定了这个目录缺省是否可写，也可以用readonly = no来设置可写 public = yes|no # 指明该共享资源是否能给游客帐号访问，guest ok = yes其实和public = yes是一样的 user = user, @group # user设置所有可能使用该共享资源的用户，也可以用@group代表group这个组的所有成员，不同的项目之间用空格或者逗号隔开 valid users = user, @group # 指定能够使用该共享资源的用户和组 invalid users = user, @group # 指定不能够使用该共享资源的用户和组 read list = user, @group # 指定只能读取该共享资源的用户和组 write list = user, @group # 指定能读取和写该共享资源的用户和组 admin list = user, @group # 指定能管理该共享资源（包括读写和权限赋予等）的用户和组 hide dot files = yes|no # 指明是否像UNIX那样隐藏以“.”号开头的文件 create mode = 0755 # 指明新建立的文件的属性，一般是0755 directory mode = 0755 # 指明新建立的目录的属性，一般是0755 sync always = yes|no # 指明对该共享资源进行写操作后是否进行同步操作 short preserve case = yes|no # 指明是否区分文件名大小写 preserve case = yes|no # 指明是否保持大小写 case sensitive = yes|no # 指明是否对大小写敏感，一般选no，不然可能引起错误 mangle case = yes|no # 指明混合大小写 default case = upper|lower # 指明缺省的文件名是全部大写还是小写 force user = testuser # 强制把建立文件的属主是谁。如果我有一个目录，让guest可以写，那么guest就可以删除，如果我用force user= testuser强制建立文件的属主是testuser，同时限制create mask = 0755，这样guest就不能删除了 wide links = yes|no # 指明是否允许共享外符号连接，比如共享资源里面有个连接指向非共享资源里面的文件或者目录，如果设置wide links = no将使该连接不可用 max connections = 100 # 设定最大同时连接数 delete readonly = yes|no # 指明能否删除共享资源里面已经被定义为只读的文件 三、创建samba用户注意，创建samba用户之前，必须先确保有一个同名的Linux用户，否则samba用户会创建失败。 1$ sudo smbpasswd -a smbuser 四、重启samba服务1$ sudo service smbd restart 五. 客户端访问测试1. Linux客户端访问测试1$ smbclient -L //localhost/share 2. Windows客户端访问测试可以访问如下地址： \IP或者主机名\share 如果public = no，此时需要输入samba用户密码；如果public = yes，则作为nobody用户直接访问。 另外，在Windows客户端使用net use * /del /y这条命令可以清理访问缓存。]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>CentOS</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+        <tag>samba</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux/CentOS 下开启MySQL远程连接,远程管理数据库]]></title>
+    <url>%2F2018-01-04-Linux-CentOS-%E4%B8%8B%E5%BC%80%E5%90%AFMySQL%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5-%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93.html</url>
+    <content type="text"><![CDATA[当服务器没有运行PHP、没装phpMyAdmin的时候，远程管理MySQL就显得有必要了。 第一步：开启MySQL用户的远程访问权限1mysql -u root -p mysql # 第1个mysql是执行命令，第2个mysql是系统数据名称 mysql -u root -p mysql # 第1个mysql是执行命令，第2个mysql是系统数据名称在MySQL控制台执行:1234grant all privileges on *.* to &apos;root&apos;@&apos;%&apos; identified by &apos;123456&apos; with grant option;# root是用户名，%代表任意主机，&apos;123456&apos;指定的登录密码（这个和本地的root密码可以设置不同的，互不影响）flush privileges; # 重载系统权限exit; grant all privileges on . to ‘root‘@’%’ identified by ‘123456’ with grant option; root是用户名，%代表任意主机，’123456’指定的登录密码（这个和本地的root密码可以设置不同的，互不影响）flush privileges; # 重载系统权限exit;如果想允许用户root从ip为192.168.137.99的主机连接到MySQL服务： 12grant all privileges on *.* to &apos;root&apos;@&apos;192.168.137.99&apos; identified by &apos;123456&apos; with grant option;flush privileges; grant all privileges on . to ‘root‘@’192.168.137.99’ identified by ‘123456’ with grant option;flush privileges; 第二步：设置防火墙，让 3306 端口对外可访问123456iptables -I INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT# 查看规则是否生效iptables -L -n # 或者: service iptables status# 此时生产环境是不安全的，远程管理之后应该关闭端口，删除之前添加的规则iptables -D INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT iptables -I INPUT -p tcp -m state –state NEW -m tcp –dport 3306 -j ACCEPT 查看规则是否生效iptables -L -n # 或者: service iptables status 此时生产环境是不安全的，远程管理之后应该关闭端口，删除之前添加的规则iptables -D INPUT -p tcp -m state –state NEW -m tcp –dport 3306 -j ACCEPT注意：上面iptables添加/删除规则都是临时的，如果需要重启后也生效，需要保存修改:1service iptables save # 或者: /etc/init.d/iptables save service iptables save # 或者: /etc/init.d/iptables save另外，12vi /etc/sysconfig/iptables # 加上下面这行规则也是可以的-A INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT vi /etc/sysconfig/iptables # 加上下面这行规则也是可以的-A INPUT -p tcp -m state –state NEW -m tcp –dport 3306 -j ACCEPT 远程管理数据库的软件，Windows系统下可以使用SQLyog，用了几种远程软件，感觉这个用起来蛮不错的。]]></content>
+      <categories>
+        <category>数据库</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>Linux</tag>
+        <tag>MySQL</tag>
+        <tag>CentOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PDO的基本操作]]></title>
+    <url>%2F2017-12-29-PDO%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C.html</url>
+    <content type="text"><![CDATA[PHP操作MySQL数据库方式有三种： *1. mysql 最原始的、纯过程化的 如连接： mysql_connect(主机名，账号，密码); mysql_query(); mysqli 改进版的、兼容过程化和面向对象化操作如：连接： mysqli_connect(主机名，账号，密码，库名) //过程化 new mysqli(主机名，账号，密码，库名) //面向对象 *3. PDO 通用的，兼容其他数据库 ， 纯面向对象方式如： 连接： new PDO(DSN,账号，密码); 选择PDO的原因：跨数据库，带预处理（防sql注入）、支持事务操作 mysqli系列函数只能操作mysql/mariadb数据库、mysqli拓展不能操作其他数据库(oracel/sqlsever)。PDO （PHP Data Object ）提供了一个数据访问抽象层，意味着，不管使用哪种数据库，都可以用相同的方法来查询和获取数据。============================================================================= PDO–PHP Data Objects PDO的环境配置：开启支持PDO 在php.ini配置文件中开启： extension=php_pdo.dll ；5.1以后版本不用加这个 extension=php_pdo_mysql.dll 在PDO操作中涉及到类：PDO、PDOStatement(预处理对象)、PDOException（异常类） 一、 PDO类的构造方法： PDO __construct( string dsn [, string username [, string password [, array driver_options]]] ); 其中:dsn数据库连接信息如“mysql:host=localhost;dbname=库名” dsn的格式：”驱动名:host=主机名;dbname=库名“ username：用户名 password:密码 driver_options：配置选项： 如： PDO::ATTR_PERSISTENT=&gt;true,是否开启持久链接 PDO::ATTR_ERRMODE=&gt;错误处理模式：(可以是以下三个)(3) PDO::ERRMODE_SILENT:不报错误（忽略）(0) PDO::ERRMODE_WARNING:以警告的方式报错(1) PDO::ERRMODE_EXCEPTION：以异常的方式报错(推荐使用)。(2) $pdo = new PDO(“mysql:host=localhost;dbname=lamp36db”,”root”,”root”);$pdo-&gt;setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION); 其他方法： query($sql); 用于执行查询SQL语句。返回PDOStatement对象 exec($sql); 用于执行增、删、改操作，返回影响行数； getAttribute(); 获取一个”数据库连接对象”属性。 setAttribute(); 设置一个”数据库连接对象”属性。 beginTransaction 开启一个事物（做一个回滚点） commit 提交事务 rollBack 事务回滚操作。 errorCode 获取错误码 errorInfo 获取错误信息10.lastInsertId 获取刚刚添加的主键值。11.prepare 创建SQL的预处理，返回PDOStatement对象12.quote 为sql字串添加单引号。 预处理对象PDOStatement对象：我们可以通过PDO的方法来获取PDOStatement： 1.PDO的query（查询sql）方法获取，用于解析结果集 2.PDO的prepare(SQL)方法获取，用于处理参数式sql并执行操作。 PDOstatement对象的方法：1、fetch() 返回结果集的下一行，结果指针下移，到头返回false 。 参数： PDO::FETCH_BOTH (default)、：索引加关联数组模式 PDO::FETCH_ASSOC、 ：关联数组模式 PDO::FETCH_NUM、 ：索引数组模式 PDO::FETCH_OBJ、 ：对象模式 PDO::FETCH_LAZY ：所有模式（SQL语句和对象） 2、fetchAll() 通过一次调用返回所有结果，结果是以数组形式保存 参数：PDO::FETCH_BOTH (default)、 PDO::FETCH_ASSOC、 PDO::FETCH_NUM、 PDO::FETCH_OBJ、 PDO::FETCH_COLUMN表示取指定某一列， 如：$rslist = $stmt-&gt;fetchAll(PDO::FETCH_COLUMN,2);取第三列3、execute() 负责执行一个准备好了的预处理语句 fetchColumn()返回结果集中下一行某个列的值 setFetchMode()设置需要结果集合的类型 rowCount() 返回使用增、删、改、查操作语句后受影响的行总数 setAttribute()为一个预处理语句设置属性 getAttribute()获取一个声明的属性 errorCode() 获取错误码 errorInfo() 获取错误信息 bindParam() 将参数绑定到相应的查询占位符上bool PDOStatement::bindParam ( mixed $parameter , mixed &amp;$variable [, int $data_type [, int $length [, mixed $driver_options ]]] ) 其中： $parameter：占位符名或索引偏移量 &amp;$variable:参数的值，需要按引用传递也就是必须放一个变量其中参数:$data_type:数据类型PDO::PARAM_BOOL/PDO::PARAM_NULL/PDO::PARAM_INT/PDO::PARAM_STR/ PDO::PARAM_LOB/PDO::PARAM_STMT/PDO::PARAM_INPUT_OUTPUT $length：指数据类型的长度 $driver_options：驱动选项。 bindColumn() 用来匹配列名和一个指定的变量名，这样每次获取各行记录时，会自动将相应的值赋给变量。 bindValue() 将一值绑定到对应的一个参数中 nextRowset() 检查下一行集 columnCount() 在结果集中返回列的数目 getColumnMeta() 在结果集中返回某一列的属性信息 closeCursor() 关闭游标，使该声明再次执行 在PDO中参数式的SQL语句有两种(预处理sql)： 1.insert into stu(id,name) value(?,?); //？号式（适合参数少的） 2.insert into stu(id,name) value(:id,:name); // 别名式(适合参数多的)在PDO中为参数式SQL语句赋值有三种： 1.使用数组 $stmt-&gt;execute(array(“lamp1404”,”qq2”)); $stmt-&gt;execute(array(“id”=&gt;”lamp1404”,”name”=&gt;”qq2”)); 2.使用方法单个赋值 $stmt-&gt;bindValue(1,”lamp1901”); $stmt-&gt;bindValue(2,”qq2”); $stmt-&gt;execute(); $stmt-&gt;bindValue(&quot;:id&quot;,&quot;lamp1901&quot;,PDO::PARAM_STR); //带指定类型 $stmt-&gt;bindValue(&quot;:name&quot;,&quot;qq2&quot;,PDO::PARAM_STR); $stmt-&gt;execute(); 使用方法绑定变量$stmt-&gt;bindParam(“:id”,$id);$stmt-&gt;bindParam(“:name”,$name);$id=”lamp1401”;$name=”qq2”;$stmt-&gt;execute(); 事务处理 事务：将多条sql操作（增删改）作为一个操作单元，要么都成功，要么都失败。—– PDO对事务的支持 第一：被操作的表必须是innoDB类型的表（支持事务） MySQL常用的表类型：MyISAM(非事务)查询速度快、InnodB（事务型）安全性高 //更改表的类型为innoDB类型 mysql&gt; alter table stu engine=innodb; Query OK, 29 rows affected (0.34 sec) Records: 29 Duplicates: 0 Warnings: 0 //查看表结构 mysql&gt; show create table stu\G; 第二：使用PDO就可以操作数据库了 使用到了PDO中的方法： beginTransaction 开启一个事物（做一个回滚点） commit 提交事务 rollBack 事务回滚操作。 使用情况：当做多条sql语句处理时(增删改)，要求是都必须成功。]]></content>
+      <tags>
+        <tag>PDO</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PHP注释标准]]></title>
+    <url>%2F2017-12-28-PHP%E6%B3%A8%E9%87%8A%E6%A0%87%E5%87%86.html</url>
+    <content type="text"><![CDATA[PHP中注释的规范与标准12345678910111213141516171819202122232425262728/*** @name 名字* @abstract 申明变量/类/方法* @access 指明这个变量、类、函数/方法的存取权限* @author 函数作者的名字和邮箱地址* @category 组织packages* @copyright 指明版权信息* @const 指明常量* @deprecate 指明不推荐或者是废弃的信息* @example 示例* @exclude 指明当前的注释将不进行分析，不出现在文挡中* @final 指明这是一个最终的类、方法、属性，禁止派生、修改。* @global 指明在此函数中引用的全局变量* @include 指明包含的文件的信息* @link 定义在线连接* @module 定义归属的模块信息* @modulegroup 定义归属的模块组* @package 定义归属的包的信息* @param 定义函数或者方法的参数信息* @return 定义函数或者方法的返回信息* @see 定义需要参考的函数、变量，并加入相应的超级连接。* @since 指明该api函数或者方法是从哪个版本开始引入的* @static 指明变量、类、函数是静态的。* @throws 指明此函数可能抛出的错误异常,极其发生的情况* @todo 指明应该改进或没有实现的地方* @var 定义说明变量/属性。* @version 定义版本信息*/ 文档标记的使用范围是指该标记可以用来修饰的关键字，或其他文档标记。所有的文档标记都是在每一行的 * 后面以@开头。如果在一段话的中间出来@的标记，这个标记将会被当做普通内容而被忽略掉。 @access使用范围：class,function,var,define,module该标记用于指明关键字的存取权限：private、public或proteced @author指明作者 @copyright使用范围：class，function，var，define，module，use指明版权信息 @deprecated使用范围：class，function，var，define，module，constent，global，include指明不用或者废弃的关键字 @example该标记用于解析一段文件内容，并将他们高亮显示。Phpdoc会试图从该标记给的文件路径中读取文件内容 @const使用范围：define用来指明php中define的常量 @final使用范围：class,function,var指明关键字是一个最终的类、方法、属性，禁止派生、修改。 @filesource和example类似，只不过该标记将直接读取当前解析的php文件的内容并显示。 @global指明在此函数中引用的全局变量 @ingore用于在文档中忽略指定的关键字 @license相当于html标签中的,首先是URL，接着是要显示的内容例如[url=http://blog.jungor.com/”http://blog.jungor.com”]DGJungor&#39;s blog [/url]可以写作 @license http://blog.jungor.com DGJungor’s blog @link类似于license但还可以通过link指到文档中的任何一个关键字 @name为关键字指定一个别名。 @package使用范围：页面级别的-&gt; define，function，include类级别的-&gt;class，var，methods用于逻辑上将一个或几个关键字分到一组。 @abstrcut说明当前类是一个抽象类 @param指明一个函数的参数 @return指明一个方法或函数的返回指 @static指明关建字是静态的。 @var指明变量类型 @version指明版本信息 21@todo指明应该改进或没有实现的地方 @throws指明此函数可能抛出的错误异常,极其发生的情况上面提到过，普通的文档标记标记必须在每行的开头以@标记，除此之外，还有一种标记叫做inline tag,用{@}表示，具体包括以下几种： {@link}用法同@link {@source}显示一段函数或方法的内容]]></content>
+      <tags>
+        <tag>代码规范</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[TP5中同字段where多条件查询]]></title>
+    <url>%2F2017-12-25-TP5%E4%B8%AD%E5%90%8C%E5%AD%97%E6%AE%B5where%E5%A4%9A%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2.html</url>
+    <content type="text"><![CDATA[若要同字段查询多条件 一般用in1234567//条件$where= [1,2,3,4,5];//查询$data = this -&gt;where('id', 'in',$where) -&gt;select();]]></content>
+      <tags>
+        <tag>ThinkPHP5</tag>
+        <tag>框架</tag>
+      </tags>
+  </entry>
+</search>
