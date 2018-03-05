@@ -201,30 +201,6 @@
 
     
   <url>
-    <loc>http://blog.jungor.cn/2018-01-19-%E5%A6%82%E4%BD%95%E5%9C%A8Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87.html</loc>
-    <lastmod>2018-01-22T06:44:32.265Z</lastmod>
-    <data>
-        <display>
-        <title>如何在Hexo中插入图片</title>
-        <pubTime>2018-01-19T01:30:30.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>Hexo美化</tag>
-         
-        <tag>Hexo技巧</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="http://blog.jungor.cn/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.jungor.cn/2018-01-10-%E5%9C%A8Ubuntu%E4%B8%8Bsamba%E7%9A%84%E9%85%8D%E7%BD%AE.html</loc>
     <lastmod>2018-01-22T06:44:32.265Z</lastmod>
     <data>
@@ -245,6 +221,30 @@
           
              
               <breadCrumb title="CentOS" url="http://blog.jungor.cn/categories/Linux/CentOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.jungor.cn/2018-01-19-%E5%A6%82%E4%BD%95%E5%9C%A8Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87.html</loc>
+    <lastmod>2018-01-22T06:44:32.265Z</lastmod>
+    <data>
+        <display>
+        <title>如何在Hexo中插入图片</title>
+        <pubTime>2018-01-19T01:30:30.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Hexo美化</tag>
+         
+        <tag>Hexo技巧</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://blog.jungor.cn/categories/Hexo/"/>
           
         </display>
     </data>
@@ -347,9 +347,9 @@
         <title>PDO的基本操作</title>
         <pubTime>2017-12-29T06:40:53.000Z</pubTime>
         
-        <tag>PDO</tag>
-         
         <tag>数据库</tag>
+         
+        <tag>PDO</tag>
          
          
            

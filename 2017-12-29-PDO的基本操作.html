@@ -148,11 +148,11 @@
 
 
   
-  <meta name="keywords" content="PDO,数据库," />
+  <meta name="keywords" content="数据库,PDO," />
 
 
 <meta name="description" content="PHP操作MySQL数据库方式有三种：   *1. mysql 最原始的、纯过程化的 如连接： mysql_connect(主机名，账号，密码);      mysql_query();  mysqli 改进版的、兼容过程化和面向对象化操作如：连接： mysqli_connect(主机名，账号，密码，库名) //过程化 new mysqli(主机名，账号，密码，库名)       //面向对象 *">
-<meta name="keywords" content="PDO,数据库">
+<meta name="keywords" content="数据库,PDO">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PDO的基本操作">
 <meta property="og:url" content="http://blog.jungor.cn/2017-12-29-PDO的基本操作.html">
@@ -424,6 +424,17 @@
 
           
           
+             <span id="/2017-12-29-PDO的基本操作.html" class="leancloud_visitors" data-flag-title="PDO的基本操作">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
             <span class="post-meta-divider">|</span>
@@ -574,9 +585,9 @@ mysql&gt; show create table stu\G;
       
         <div class="post-tags">
           
-            <a href="/tags/PDO/" rel="tag"># PDO</a>
-          
             <a href="/tags/数据库/" rel="tag"># 数据库</a>
+          
+            <a href="/tags/PDO/" rel="tag"># PDO</a>
           
         </div>
       
@@ -1428,6 +1439,102 @@ DGJungor's Blog &mdash;
 
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("kqWqBkQ4PEEaNFgisU2QODXU-gzGzoHsz", "9O0YDoaVlxpKx7CGi8g15PIm");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set 'security' option to 'false'.');
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
   <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
