@@ -162,7 +162,7 @@
 <meta property="og:image" content="http://blog.jungor.cn/2018-03-08-MySQL大表优化方案/1.png">
 <meta property="og:image" content="http://blog.jungor.cn/2018-03-08-MySQL大表优化方案/2.png">
 <meta property="og:image" content="http://blog.jungor.cn/2018-03-08-MySQL大表优化方案/3.png">
-<meta property="og:updated_time" content="2018-03-08T07:49:22.763Z">
+<meta property="og:updated_time" content="2018-03-08T07:57:31.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL大表优化方案">
 <meta name="twitter:description" content="当MySQL单表记录数过大时，增删改查性能都会急剧下降，可以参考以下步骤来优化： 单表优化除非单表数据未来会一直不断上涨，否则不要一开始就考虑拆分，拆分会带来逻辑、部署、运维的各种复杂度，一般以整型值为主的表在千万级以下，字符串为主的表在五百万以下是没有太大问题的。而事实上很多时候MySQL单表的性能依然有不少优化空间，甚至能正常支撑千万级以上的数据量： 字段 尽量使用TINYINT、SMALLI">
@@ -547,14 +547,12 @@
 <li>不支持全文索引</li>
 </ul>
 <p><strong>总体来讲，MyISAM适合SELECT密集型的表，而InnoDB适合INSERT和UPDATE密集型的表</strong></p>
-<h3 id="系统调优参数"><a href="#系统调优参数" class="headerlink" title="系统调优参数"></a>系统调优参数</h3><p>####可以使用下面几个工具来做基准测试：</p>
-<ul>
+<h3 id="系统调优参数"><a href="#系统调优参数" class="headerlink" title="系统调优参数"></a>系统调优参数</h3><h4 id="可以使用下面几个工具来做基准测试："><a href="#可以使用下面几个工具来做基准测试：" class="headerlink" title="可以使用下面几个工具来做基准测试："></a>可以使用下面几个工具来做基准测试：</h4><ul>
 <li>sysbench：一个模块化，跨平台以及多线程的性能测试工具</li>
 <li>iibench-mysql：基于 Java 的 MySQL/Percona/MariaDB 索引进行插入性能测试工具</li>
 <li>tpcc-mysql：Percona开发的TPC-C测试工具</li>
 </ul>
-<p>####具体的调优参数内容较多，具体可参考官方文档，这里介绍一些比较重要的参数：</p>
-<ul>
+<h4 id="具体的调优参数内容较多，具体可参考官方文档，这里介绍一些比较重要的参数："><a href="#具体的调优参数内容较多，具体可参考官方文档，这里介绍一些比较重要的参数：" class="headerlink" title="具体的调优参数内容较多，具体可参考官方文档，这里介绍一些比较重要的参数："></a>具体的调优参数内容较多，具体可参考官方文档，这里介绍一些比较重要的参数：</h4><ul>
 <li>back_log：back_log值指出在MySQL暂时停止回答新请求之前的短时间内多少个请求可以被存在堆栈中。也就是说，如果MySql的连接数据达到max_connections时，新来的请求将会被存在堆栈中，以等待某一连接释放资源，该堆栈的数量即back_log，如果等待连接的数量超过back_log，将不被授予连接资源。可以从默认的50升至500</li>
 <li>wait_timeout：数据库连接闲置时间，闲置连接会占用内存资源。可以从默认的8小时减到半小时</li>
 <li>max_user_connection: 最大连接数，默认为0无上限，最好设一个合理上限</li>
@@ -962,7 +960,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#单表优化"><span class="nav-number">1.</span> <span class="nav-text">单表优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字段"><span class="nav-number">1.1.</span> <span class="nav-text">字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#索引"><span class="nav-number">1.2.</span> <span class="nav-text">索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询SQL"><span class="nav-number">1.3.</span> <span class="nav-text">查询SQL</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引擎"><span class="nav-number">2.</span> <span class="nav-text">引擎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统调优参数"><span class="nav-number">3.</span> <span class="nav-text">系统调优参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级硬件"><span class="nav-number">4.</span> <span class="nav-text">升级硬件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读写分离"><span class="nav-number">5.</span> <span class="nav-text">读写分离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存"><span class="nav-number">6.</span> <span class="nav-text">缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表分区"><span class="nav-number">7.</span> <span class="nav-text">表分区</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分区的好处是："><span class="nav-number">7.1.</span> <span class="nav-text">分区的好处是：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分区的限制和缺点："><span class="nav-number">7.2.</span> <span class="nav-text">分区的限制和缺点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分区的类型："><span class="nav-number">7.3.</span> <span class="nav-text">分区的类型：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分区适合的场景有："><span class="nav-number">7.4.</span> <span class="nav-text">分区适合的场景有：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#单表优化"><span class="nav-number">1.</span> <span class="nav-text">单表优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字段"><span class="nav-number">1.1.</span> <span class="nav-text">字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#索引"><span class="nav-number">1.2.</span> <span class="nav-text">索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询SQL"><span class="nav-number">1.3.</span> <span class="nav-text">查询SQL</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引擎"><span class="nav-number">2.</span> <span class="nav-text">引擎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统调优参数"><span class="nav-number">3.</span> <span class="nav-text">系统调优参数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#可以使用下面几个工具来做基准测试："><span class="nav-number">3.1.</span> <span class="nav-text">可以使用下面几个工具来做基准测试：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体的调优参数内容较多，具体可参考官方文档，这里介绍一些比较重要的参数："><span class="nav-number">3.2.</span> <span class="nav-text">具体的调优参数内容较多，具体可参考官方文档，这里介绍一些比较重要的参数：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级硬件"><span class="nav-number">4.</span> <span class="nav-text">升级硬件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读写分离"><span class="nav-number">5.</span> <span class="nav-text">读写分离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存"><span class="nav-number">6.</span> <span class="nav-text">缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表分区"><span class="nav-number">7.</span> <span class="nav-text">表分区</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分区的好处是："><span class="nav-number">7.1.</span> <span class="nav-text">分区的好处是：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分区的限制和缺点："><span class="nav-number">7.2.</span> <span class="nav-text">分区的限制和缺点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分区的类型："><span class="nav-number">7.3.</span> <span class="nav-text">分区的类型：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分区适合的场景有："><span class="nav-number">7.4.</span> <span class="nav-text">分区适合的场景有：</span></a></li></ol></li></ol></div>
             
 
           </div>
