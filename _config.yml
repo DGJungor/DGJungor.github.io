@@ -80,7 +80,7 @@ deploy:
   type: git
   branch: master
   repo:
-    github: git@github.com:DGJungor/DGJungor.github.io.git
+#    github: git@github.com:DGJungor/DGJungor.github.io.git
     coding: https://git.coding.net/Jun4/Blog.git
 
 # Sitemap Setting
