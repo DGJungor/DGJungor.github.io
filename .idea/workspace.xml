@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a86d439-53ae-43b0-bb64-db056e8fd5ff" name="默认的" comment="">
+      <change beforePath="$PROJECT_DIR$/source/_posts/2018/01/如何在Hexo中插入图片.md" afterPath="$PROJECT_DIR$/source/_posts/2018/01/如何在Hexo中插入图片.md" />
       <change beforePath="$PROJECT_DIR$/source/_posts/2018/03/MySQL大表优化方案.md" afterPath="$PROJECT_DIR$/source/_posts/2018/03/MySQL大表优化方案.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +28,8 @@
         <entry file="file://$PROJECT_DIR$/source/_posts/2018/03/MySQL大表优化方案.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="215">
-                <caret line="79" column="5" lean-forward="false" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+              <first_editor relative-caret-position="4816">
+                <caret line="172" column="20" lean-forward="false" selection-start-line="172" selection-start-column="20" selection-end-line="172" selection-end-column="20" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -36,12 +37,63 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="3.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/_posts/2018/03/MySQL大表优化方案/3.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MongoDB的使用场景和介绍.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/2018/02/MongoDB的使用场景和介绍.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="168">
+              <first_editor relative-caret-position="252">
                 <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="13" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Linux-CentOS-下开启MySQL远程连接-远程管理数据库.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/_posts/2018/01/Linux-CentOS-下开启MySQL远程连接-远程管理数据库.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="-1213">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding>
+                  <marker date="1516936810914" expanded="true" signature="367:449" ph="grant all pr... " />
+                  <marker date="1516936810914" expanded="true" signature="512:528" ph="flush privil... " />
+                  <marker date="1516936810914" expanded="true" signature="781:876" ph="grant all pr... " />
+                  <marker date="1516936810914" expanded="true" signature="878:894" ph="flush privil... " />
+                </folding>
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PDO的基本操作.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/_posts/2018/01/PDO的基本操作.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="-3528">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="如何在Hexo中插入图片.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/_posts/2018/01/如何在Hexo中插入图片.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="663">
+                <caret line="40" column="24" lean-forward="false" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -66,6 +118,7 @@
         <option value="$PROJECT_DIR$/themes/next/_config.yml" />
         <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/source/_posts/2018/03/MySQL大表优化方案.md" />
+        <option value="$PROJECT_DIR$/source/_posts/2018/01/如何在Hexo中插入图片.md" />
       </list>
     </option>
   </component>
@@ -78,10 +131,11 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="472" />
-    <option name="y" value="189" />
+    <option name="x" value="983" />
+    <option name="y" value="197" />
     <option name="width" value="1924" />
     <option name="height" value="1047" />
   </component>
@@ -131,6 +185,14 @@
               <item name="source" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="_posts" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="2018" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="01" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="GitBlog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitBlog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="source" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="_posts" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="2018" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="02" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -140,6 +202,15 @@
               <item name="_posts" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="2018" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="03" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="GitBlog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitBlog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="source" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="_posts" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="2018" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="03" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="MySQL大表优化方案" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -179,18 +250,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1520472944533</updated>
-      <workItem from="1520472946521" duration="7990000" />
+      <workItem from="1520472946521" duration="10820000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7990000" />
+    <option name="totallyTimeSpent" value="10820000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="472" y="189" width="1924" height="1047" extended-state="0" />
+    <frame x="983" y="197" width="1924" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08071279" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21121593" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -335,11 +406,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/2018/03/MySQL大表优化方案/1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/2018/03/MySQL大表优化方案/3.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/2018/02/基于canal-的-mysql-与-redis-memcached-mongodb-的-nosql-数据实时同步方案-案例，canal-client.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/2018/02/MongoDB的使用场景和介绍.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="168">
+          <first_editor relative-caret-position="252">
             <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="13" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/2018/01/Linux-CentOS-下开启MySQL远程连接-远程管理数据库.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-1213">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding>
+              <marker date="1516936810914" expanded="true" signature="367:449" ph="grant all pr... " />
+              <marker date="1516936810914" expanded="true" signature="512:528" ph="flush privil... " />
+              <marker date="1516936810914" expanded="true" signature="781:876" ph="grant all pr... " />
+              <marker date="1516936810914" expanded="true" signature="878:894" ph="flush privil... " />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/2018/01/PDO的基本操作.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-3528">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/2018/01/如何在Hexo中插入图片.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="663">
+            <caret line="40" column="24" lean-forward="false" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
             <folding />
           </first_editor>
           <second_editor />
@@ -349,8 +479,8 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/2018/03/MySQL大表优化方案.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="215">
-            <caret line="79" column="5" lean-forward="false" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+          <first_editor relative-caret-position="4816">
+            <caret line="172" column="20" lean-forward="false" selection-start-line="172" selection-start-column="20" selection-end-line="172" selection-end-column="20" />
             <folding />
           </first_editor>
           <second_editor />

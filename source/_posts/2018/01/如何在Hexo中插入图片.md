@@ -38,4 +38,4 @@ post_asset_folder: true
 通过这种方式，图片将会同时出现在文章和主页以及归档页中。
 
 
-{% asset_img avatar.jpg 这是一张试例图片 %}
+{% asset_img avatar.jpg  %}
