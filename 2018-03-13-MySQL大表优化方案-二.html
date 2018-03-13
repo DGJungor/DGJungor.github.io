@@ -148,26 +148,33 @@
 
 
   
-  <meta name="keywords" content="DGJungor,Jungor,东莞俊哥,东莞俊哥的博客,Blog" />
+  <meta name="keywords" content="数据库,MySQL," />
 
 
-<meta name="description" content="东莞俊哥 | 关于PHP、Python的技术博客,记录开发心得">
-<meta property="og:type" content="website">
-<meta property="og:title" content="DGJungor&#39;s Blog">
-<meta property="og:url" content="http://blog.jungor.cn/archives/2017/index.html">
+<meta name="description" content="垂直拆分垂直分库是根据数据库里面的数据表的相关性进行拆分，比如：一个数据库里面既存在用户数据，又存在订单数据，那么垂直拆分可以把用户数据放到用户库、把订单数据放到订单库。垂直分表是对数据表进行垂直拆分的一种方式，常见的是把一个多字段的大表按常用字段和非常用字段进行拆分，每个表里面的数据记录数一般情况下是相同的，只是字段不一样，使用主键关联  垂直拆分的优点是： 可以使得行数据变小，一个数据块(Bl">
+<meta name="keywords" content="数据库,MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL大表优化方案(二)">
+<meta property="og:url" content="http://blog.jungor.cn/2018-03-13-MySQL大表优化方案-二.html">
 <meta property="og:site_name" content="DGJungor&#39;s Blog">
-<meta property="og:description" content="东莞俊哥 | 关于PHP、Python的技术博客,记录开发心得">
+<meta property="og:description" content="垂直拆分垂直分库是根据数据库里面的数据表的相关性进行拆分，比如：一个数据库里面既存在用户数据，又存在订单数据，那么垂直拆分可以把用户数据放到用户库、把订单数据放到订单库。垂直分表是对数据表进行垂直拆分的一种方式，常见的是把一个多字段的大表按常用字段和非常用字段进行拆分，每个表里面的数据记录数一般情况下是相同的，只是字段不一样，使用主键关联  垂直拆分的优点是： 可以使得行数据变小，一个数据块(Bl">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://blog.jungor.cn/2018-03-13-MySQL大表优化方案-二/1.png">
+<meta property="og:image" content="http://blog.jungor.cn/2018-03-13-MySQL大表优化方案-二/2.png">
+<meta property="og:image" content="http://blog.jungor.cn/2018-03-13-MySQL大表优化方案-二/3.png">
+<meta property="og:image" content="http://blog.jungor.cn/2018-03-13-MySQL大表优化方案-二/4.png">
+<meta property="og:updated_time" content="2018-03-13T01:41:31.482Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DGJungor&#39;s Blog">
-<meta name="twitter:description" content="东莞俊哥 | 关于PHP、Python的技术博客,记录开发心得">
+<meta name="twitter:title" content="MySQL大表优化方案(二)">
+<meta name="twitter:description" content="垂直拆分垂直分库是根据数据库里面的数据表的相关性进行拆分，比如：一个数据库里面既存在用户数据，又存在订单数据，那么垂直拆分可以把用户数据放到用户库、把订单数据放到订单库。垂直分表是对数据表进行垂直拆分的一种方式，常见的是把一个多字段的大表按常用字段和非常用字段进行拆分，每个表里面的数据记录数一般情况下是相同的，只是字段不一样，使用主键关联  垂直拆分的优点是： 可以使得行数据变小，一个数据块(Bl">
+<meta name="twitter:image" content="http://blog.jungor.cn/2018-03-13-MySQL大表优化方案-二/1.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://blog.jungor.cn/archives/2017/"/>
+  <link rel="canonical" href="http://blog.jungor.cn/2018-03-13-MySQL大表优化方案-二.html"/>
 
 
 
@@ -176,7 +183,7 @@
     sidebar: "",
   };
 </script>
-  <title>归档 | DGJungor's Blog</title>
+  <title>MySQL大表优化方案(二) | DGJungor's Blog</title>
   
 
 
@@ -233,7 +240,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -360,154 +367,299 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.jungor.cn/2018-03-13-MySQL大表优化方案-二.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DGJungor">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DGJungor's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h2 class="post-title" itemprop="name headline">MySQL大表优化方案(二)</h2>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-13T09:18:11+08:00">2018-03-13</time>
+            
+
+            
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 17 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2017">2017</h2>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2018-03-13-MySQL大表优化方案-二.html" class="leancloud_visitors" data-flag-title="MySQL大表优化方案(二)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017-12-29-PDO的基本操作.html" itemprop="url">
-              
-                <span itemprop="name">PDO的基本操作</span>
-              
-            </a>
-        
-      </h3>
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-29T14:40:53+08:00"
-              content="2017-12-29" >
-          12-29
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017-12-28-PHP注释标准.html" itemprop="url">
-              
-                <span itemprop="name">PHP注释标准</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-28T14:23:17+08:00"
-              content="2017-12-28" >
-          12-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2017-12-25-TP5中同字段where多条件查询.html" itemprop="url">
-              
-                <span itemprop="name">TP5中同字段where多条件查询</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-25T14:10:21+08:00"
-              content="2017-12-25" >
-          12-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <h3 id="垂直拆分"><a href="#垂直拆分" class="headerlink" title="垂直拆分"></a>垂直拆分</h3><p>垂直分库是根据数据库里面的数据表的相关性进行拆分，比如：一个数据库里面既存在用户数据，又存在订单数据，那么垂直拆分可以把用户数据放到用户库、把订单数据放到订单库。垂直分表是对数据表进行垂直拆分的一种方式，常见的是把一个多字段的大表按常用字段和非常用字段进行拆分，每个表里面的数据记录数一般情况下是相同的，只是字段不一样，使用主键关联</p>
+<img src="/2018-03-13-MySQL大表优化方案-二/1.png">
+<h4 id="垂直拆分的优点是："><a href="#垂直拆分的优点是：" class="headerlink" title="垂直拆分的优点是："></a>垂直拆分的优点是：</h4><ul>
+<li>可以使得行数据变小，一个数据块(Block)就能存放更多的数据，在查询时就会减少I/O次数(每次查询时读取的Block 就少)</li>
+<li>可以达到最大化利用Cache的目的，具体在垂直拆分的时候可以将不常变的字段放一起，将经常改变的放一起</li>
+<li>数据维护简单</li>
+</ul>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li>主键出现冗余，需要管理冗余列</li>
+<li>会引起表连接JOIN操作（增加CPU开销）可以通过在业务服务器上进行join来减少数据库压力</li>
+<li>依然存在单表数据量过大的问题（需要水平拆分）</li>
+<li>事务处理复杂</li>
+</ul>
+<a id="more"></a>
+<h3 id="水平拆分"><a href="#水平拆分" class="headerlink" title="水平拆分"></a>水平拆分</h3><p>概述<br>水平拆分是通过某种策略将数据分片来存储，分库内分表和分库两部分，每片数据会分散到不同的MySQL表或库，达到分布式的效果，能够支持非常大的数据量。前面的表分区本质上也是一种特殊的库内分表</p>
+<p>库内分表，仅仅是单纯的解决了单一表数据过大的问题，由于没有把表的数据分布到不同的机器上，因此对于减轻MySQL服务器的压力来说，并没有太大的作用，大家还是竞争同一个物理机上的IO、CPU、网络，这个就要通过分库来解决</p>
+<img src="/2018-03-13-MySQL大表优化方案-二/2.png">
+<p>实际情况中往往会是垂直拆分和水平拆分的结合，即将Users_A_M和Users_N_Z再拆成Users和UserExtras，这样一共四张表</p>
+<p>水平拆分的优点是:</p>
+<ul>
+<li>不存在单库大数据和高并发的性能瓶颈</li>
+<li>应用端改造较少</li>
+<li>提高了系统的稳定性和负载能力</li>
+</ul>
+<p>缺点是：</p>
+<ul>
+<li>分片事务一致性难以解决</li>
+<li>跨节点Join性能差，逻辑复杂</li>
+<li>数据多次扩展难度跟维护量极大</li>
+</ul>
+<p>分片原则:</p>
+<ul>
+<li>能不分就不分，参考单表优化</li>
+<li>分片数量尽量少，分片尽量均匀分布在多个数据结点上，因为一个查询SQL跨分片越多，则总体性能越差，虽然要好于所有数据在一个分片的结果，只在必要的时候进行扩容，增加分片数量</li>
+<li>分片规则需要慎重选择做好提前规划，分片规则的选择，需要考虑数据的增长模式，数据的访问模式，分片关联性问题，以及分片扩容问题，最近的分片策略为范围分片，枚举分片，一致性Hash分片，这几种分片都有利于扩容</li>
+<li>尽量不要在一个事务中的SQL跨越多个分片，分布式事务一直是个不好处理的问题</li>
+<li>查询条件尽量优化，尽量避免Select * 的方式，大量数据结果集下，会消耗大量带宽和CPU资源，查询尽量避免返回大量结果集，并且尽量为频繁使用的查询语句建立索引。</li>
+<li>通过数据冗余和表分区赖降低跨库Join的可能</li>
+</ul>
+<p>这里特别强调一下分片规则的选择问题，如果某个表的数据有明显的时间特征，比如订单、交易记录等，则他们通常比较合适用时间范围分片，因为具有时效性的数据，我们往往关注其近期的数据，查询条件中往往带有时间字段进行过滤，比较好的方案是，当前活跃的数据，采用跨度比较短的时间段进行分片，而历史性的数据，则采用比较长的跨度存储。</p>
+<p>总体上来说，分片的选择是取决于最频繁的查询SQL的条件，因为不带任何Where语句的查询SQL，会遍历所有的分片，性能相对最差，因此这种SQL越多，对系统的影响越大，所以我们要尽量避免这种SQL的产生。</p>
+<p>解决方案<br>由于水平拆分牵涉的逻辑比较复杂，当前也有了不少比较成熟的解决方案。这些方案分为两大类：客户端架构和代理架构。</p>
+<h3 id="客户端架构"><a href="#客户端架构" class="headerlink" title="客户端架构"></a>客户端架构</h3><p>通过修改数据访问层，如JDBC、Data Source、MyBatis，通过配置来管理多个数据源，直连数据库，并在模块内完成数据的分片整合，一般以Jar包的方式呈现</p>
+<img src="/2018-03-13-MySQL大表优化方案-二/3.png">
+<p>可以看到分片的实现是和应用服务器在一起的，通过修改Spring JDBC层来实现</p>
+<p>客户端架构的优点是：</p>
+<ul>
+<li>应用直连数据库，降低外围系统依赖所带来的宕机风险</li>
+<li>集成成本低，无需额外运维的组件</li>
+</ul>
+<p>缺点是：</p>
+<ul>
+<li>限于只能在数据库访问层上做文章，扩展性一般，对于比较复杂的系统可能会力不从心</li>
+<li>将分片逻辑的压力放在应用服务器上，造成额外风险</li>
+</ul>
+<h3 id="代理架构"><a href="#代理架构" class="headerlink" title="代理架构"></a>代理架构</h3><p>通过独立的中间件来统一管理所有数据源和数据分片整合，后端数据库集群对前端应用程序透明，需要独立部署和运维代理组件</p>
+<img src="/2018-03-13-MySQL大表优化方案-二/4.png">
+<p>代理组件为了分流和防止单点，一般以集群形式存在，同时可能需要Zookeeper之类的服务组件来管理</p>
+<p>代理架构的优点是：</p>
+<ul>
+<li>能够处理非常复杂的需求，不受数据库访问层原来实现的限制，扩展性强</li>
+<li>对于应用服务器透明且没有增加任何额外负载</li>
+</ul>
+<p>缺点是：</p>
+<ul>
+<li>需部署和运维独立的代理中间件，成本高</li>
+<li>应用需经过代理来连接数据库，网络上多了一跳，性能有损失且有额外风险</li>
+</ul>
+
+      
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/reward/wechatpay.jpg" alt="DGJungor 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/reward/alipay.jpg" alt="DGJungor 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
+          
+            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018-03-08-MySQL大表优化方案.html" rel="next" title="MySQL大表优化方案">
+                <i class="fa fa-chevron-left"></i> MySQL大表优化方案
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzM2NC85OTIw"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -528,8 +680,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -725,6 +886,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#垂直拆分"><span class="nav-number">1.</span> <span class="nav-text">垂直拆分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#垂直拆分的优点是："><span class="nav-number">1.1.</span> <span class="nav-text">垂直拆分的优点是：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺点"><span class="nav-number">1.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#水平拆分"><span class="nav-number">2.</span> <span class="nav-text">水平拆分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端架构"><span class="nav-number">3.</span> <span class="nav-text">客户端架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代理架构"><span class="nav-number">4.</span> <span class="nav-text">代理架构</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -903,6 +1080,10 @@ DGJungor's Blog &mdash;
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
 
   
 
@@ -927,6 +1108,17 @@ DGJungor's Blog &mdash;
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1443,13 +1635,13 @@ DGJungor's Blog &mdash;
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = ''.length > 0
+      var isPost = 'MySQL大表优化方案(二)'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = ''
+        var title = 'MySQL大表优化方案(二)'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
@@ -1457,7 +1649,7 @@ DGJungor's Blog &mdash;
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("PDO的基本操作");titles.push("PHP注释标准");titles.push("TP5中同字段where多条件查询");' //if you have a better way to get titles of posts, please change it
+        var postsstr = '' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
