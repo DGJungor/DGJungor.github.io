@@ -58,8 +58,8 @@
         <category>ThinkPHP5</category>
       </categories>
       <tags>
-        <tag>缓存</tag>
         <tag>ThinkPHP5</tag>
+        <tag>缓存</tag>
       </tags>
   </entry>
   <entry>
@@ -175,8 +175,8 @@
       </categories>
       <tags>
         <tag>数据库</tag>
-        <tag>MySQL</tag>
         <tag>Linux</tag>
+        <tag>MySQL</tag>
         <tag>CentOS</tag>
       </tags>
   </entry>
