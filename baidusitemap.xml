@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://blog.jungor.cn/2018-04-17-Python%E4%B8%AD%E5%87%BD%E6%95%B0%E7%9A%84%E7%89%B9%E6%80%A7.html</loc>
+    <lastmod>2018-04-17T02:35:31.058Z</lastmod>
+    <data>
+        <display>
+        <title>Python中函数的特性</title>
+        <pubTime>2018-04-17T02:09:35.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>概念</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://blog.jungor.cn/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.jungor.cn/2018-03-13-MySQL%E5%A4%A7%E8%A1%A8%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88-%E4%BA%8C.html</loc>
     <lastmod>2018-03-13T01:48:10.448Z</lastmod>
     <data>
@@ -124,9 +146,9 @@
         <title>THINKPHP5 缓存应用的实例</title>
         <pubTime>2018-01-31T03:42:23.000Z</pubTime>
         
-        <tag>ThinkPHP5</tag>
-         
         <tag>缓存</tag>
+         
+        <tag>ThinkPHP5</tag>
          
          
            
