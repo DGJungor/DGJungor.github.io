@@ -464,7 +464,7 @@
 
       
         <p>PHP操作MySQL数据库方式有三种：<br>   *1. mysql 最原始的、纯过程化的 如连接： mysql_connect(主机名，账号，密码);<br>      mysql_query();</p>
-<ol>
+<ol start="2">
 <li><p>mysqli 改进版的、兼容过程化和面向对象化操作<br>如：连接： mysqli_connect(主机名，账号，密码，库名) //过程化</p>
 <pre><code>new mysqli(主机名，账号，密码，库名)       //面向对象
 </code></pre><p>*3. PDO 通用的，兼容其他数据库 ， 纯面向对象方式<br>如： 连接： new PDO(DSN,账号，密码);</p>
@@ -493,7 +493,7 @@
 <h1 id="预处理对象PDOStatement对象："><a href="#预处理对象PDOStatement对象：" class="headerlink" title="预处理对象PDOStatement对象："></a>预处理对象PDOStatement对象：</h1><p>我们可以通过PDO的方法来获取PDOStatement：<br> 1.PDO的query（查询sql）方法获取，用于解析结果集<br> 2.PDO的prepare(SQL)方法获取，用于处理参数式sql并执行操作。</p>
 <h2 id="PDOstatement对象的方法："><a href="#PDOstatement对象的方法：" class="headerlink" title="PDOstatement对象的方法："></a>PDOstatement对象的方法：</h2><p>1、fetch() 返回结果集的下一行，结果指针下移，到头返回false 。<br>   参数：    PDO::FETCH_BOTH (default)、：索引加关联数组模式<br>              PDO::FETCH_ASSOC、     ：关联数组模式<br>              PDO::FETCH_NUM、          ：索引数组模式<br>         PDO::FETCH_OBJ、          ：对象模式<br>         PDO::FETCH_LAZY          ：所有模式（SQL语句和对象）</p>
 <p>2、fetchAll() 通过一次调用返回所有结果，结果是以数组形式保存<br>       参数：PDO::FETCH_BOTH (default)、<br>      PDO::FETCH_ASSOC、<br>      PDO::FETCH_NUM、<br>      PDO::FETCH_OBJ、<br>      PDO::FETCH_COLUMN表示取指定某一列，<br>      如：$rslist = $stmt-&gt;fetchAll(PDO::FETCH_COLUMN,2);取第三列<br>3、execute()    负责执行一个准备好了的预处理语句 </p>
-<ol>
+<ol start="4">
 <li>fetchColumn()返回结果集中下一行某个列的值</li>
 <li>setFetchMode()设置需要结果集合的类型</li>
 <li>rowCount()      返回使用增、删、改、查操作语句后受影响的行总数</li>
@@ -515,11 +515,11 @@ $length：指数据类型的长度 $driver_options：驱动选项。
 <pre><code>$stmt-&gt;bindValue(&quot;:id&quot;,&quot;lamp1901&quot;,PDO::PARAM_STR);     //带指定类型
 $stmt-&gt;bindValue(&quot;:name&quot;,&quot;qq2&quot;,PDO::PARAM_STR);
 $stmt-&gt;execute();
-</code></pre><ol>
+</code></pre><ol start="3">
 <li>使用方法绑定变量<br>$stmt-&gt;bindParam(“:id”,$id);<br>$stmt-&gt;bindParam(“:name”,$name);<br>$id=”lamp1401”;<br>$name=”qq2”;<br>$stmt-&gt;execute();</li>
 </ol>
 <h2 id="事务处理"><a href="#事务处理" class="headerlink" title="事务处理"></a>事务处理</h2><p>   事务：将多条sql操作（增删改）作为一个操作单元，要么都成功，要么都失败。—–</p>
-<ol>
+<ol start="4">
 <li><p>PDO对事务的支持<br>  第一：被操作的表必须是innoDB类型的表（支持事务）</p>
 <pre><code>MySQL常用的表类型：MyISAM(非事务)查询速度快、InnodB（事务型）安全性高
 //更改表的类型为innoDB类型
